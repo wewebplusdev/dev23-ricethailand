@@ -1,0 +1,128 @@
+
+CREATE TABLE `md_cma` (
+  `md_cma_id` int(11) NOT NULL auto_increment,
+  `md_cma_contantid` int(11) NOT NULL default '0',
+  `md_cma_filename` varchar(200) NOT NULL,
+  `md_cma_name` varchar(200) NOT NULL,
+  `md_cma_download` int(11) NOT NULL default '0',
+  `md_cma_language` varchar(25) NOT NULL,
+  PRIMARY KEY  (`md_cma_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง `md_cmatp`
+-- 
+
+CREATE TABLE `md_cmatp` (
+  `md_cmatp_id` int(11) NOT NULL auto_increment,
+  `md_cmatp_contantid` varchar(255) NOT NULL default '0',
+  `md_cmatp_filename` varchar(200) NOT NULL,
+  `md_cmatp_name` varchar(200) NOT NULL,
+  `md_cmatp_download` int(11) NOT NULL default '0',
+  `md_cmatp_language` varchar(25) NOT NULL,
+  PRIMARY KEY  (`md_cmatp_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง `md_cmf`
+-- 
+
+CREATE TABLE `md_cmf` (
+  `md_cmf_id` int(11) NOT NULL auto_increment,
+  `md_cmf_contantid` int(11) NOT NULL default '0',
+  `md_cmf_filename` varchar(200) NOT NULL,
+  `md_cmf_name` varchar(200) NOT NULL,
+  `md_cmf_download` int(11) NOT NULL default '0',
+  `md_cmf_language` varchar(25) NOT NULL,
+  PRIMARY KEY  (`md_cmf_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง `md_cmg`
+-- 
+
+CREATE TABLE `md_cmg` (
+  `md_cmg_id` int(11) NOT NULL auto_increment,
+  `md_cmg_masterkey` varchar(20) NOT NULL,
+  `md_cmg_language` varchar(50) NOT NULL,
+  `md_cmg_subject` varchar(200) NOT NULL,
+  `md_cmg_title` text NOT NULL,
+  `md_cmg_crebyid` int(11) NOT NULL default '0',
+  `md_cmg_creby` varchar(100) NOT NULL,
+  `md_cmg_credate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `md_cmg_lastdate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `md_cmg_status` varchar(50) NOT NULL,
+  `md_cmg_order` int(11) NOT NULL default '0',
+  `md_cmg_subjecten` varchar(255) NOT NULL,
+  `md_cmg_titleen` text NOT NULL,
+  `md_cmg_lastbyid` int(11) NOT NULL,
+  `md_cmg_lastby` varchar(255) NOT NULL,
+  PRIMARY KEY  (`md_cmg_id`),
+  UNIQUE KEY `md_cmg_id` (`md_cmg_id`),
+  KEY `md_cmg_id_2` (`md_cmg_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง `md_cms`
+-- 
+
+CREATE TABLE `md_cms` (
+  `md_cms_id` int(11) NOT NULL auto_increment,
+  `md_cms_masterkey` varchar(20) NOT NULL,
+  `md_cms_language` varchar(50) NOT NULL,
+  `md_cms_subject` text NOT NULL,
+  `md_cms_title` text NOT NULL,
+  `md_cms_htmlfilename` varchar(255) NOT NULL,
+  `md_cms_pic` varchar(50) NOT NULL,
+  `md_cms_crebyid` int(11) NOT NULL default '0',
+  `md_cms_creby` varchar(100) NOT NULL,
+  `md_cms_credate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `md_cms_lastdate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `md_cms_sdate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `md_cms_edate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `md_cms_status` varchar(50) NOT NULL,
+  `md_cms_order` int(11) NOT NULL default '0',
+  `md_cms_view` int(11) NOT NULL default '0',
+  `md_cms_description` text NOT NULL,
+  `md_cms_keywords` text NOT NULL,
+  `md_cms_metatitle` text NOT NULL,
+  `md_cms_type` varchar(50) NOT NULL,
+  `md_cms_filevdo` varchar(255) NOT NULL,
+  `md_cms_url` text NOT NULL,
+  `md_cms_subjecten` varchar(255) NOT NULL,
+  `md_cms_lastbyid` int(11) NOT NULL,
+  `md_cms_lastby` varchar(255) NOT NULL,
+  `md_cms_htmlfilenameen` varchar(225) NOT NULL,
+  `md_cms_titleen` text NOT NULL,
+  `md_cms_gid` int(11) NOT NULL,
+  `md_cms_keywordsen` text NOT NULL,
+  `md_cms_metatitleen` text NOT NULL,
+  `md_cms_descriptionen` text NOT NULL,
+  PRIMARY KEY  (`md_cms_id`),
+  UNIQUE KEY `md_cms_id` (`md_cms_id`),
+  KEY `md_cms_id_2` (`md_cms_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง `md_cmtp`
+-- 
+
+CREATE TABLE `md_cmtp` (
+  `md_cmtp_id` int(11) NOT NULL auto_increment,
+  `md_cmtp_contantid` varchar(255) NOT NULL default '0',
+  `md_cmtp_filename` varchar(200) NOT NULL,
+  `md_cmtp_name` varchar(200) NOT NULL,
+  `md_cmtp_download` int(11) NOT NULL default '0',
+  `md_cmtp_language` varchar(25) NOT NULL,
+  PRIMARY KEY  (`md_cmtp_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;

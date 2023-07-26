@@ -1,0 +1,6 @@
+<?php  
+    $verifyResponse = file_get_contents('test.txt');
+	var_dump($verifyResponse);
+	
+	    $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=6Ld3NKcbAAAAADzPkDWnYoG91A0Ro4DFeEPht5df&response=03AGdBq24f_Qa5BZyLkHoXSOqJ-5I2aYkc9HQC5GkEAkh4DdNxXKuR-FkggUjinPWomYvFFK4bKcefnyF4PmIT3V7s8v9pR2NSXuBtIyAt6lZ35dwQ5cV6BMD9W-6aWaUN5BU2RJ5G7uaqrW-B7QYZm_qrQWVQj-Ps69EGvVagvuUDYKprv2WbFRiVOqG1tFU63kbmjAgeQ7yvMnWpdoFjbEovkVn77_A878LCGLePx5KA_PlfujSAHdyLrsRdx21Ka-wak-bWSz-VHkfwyRIU_j89swVQ9APPwnFdEcItpzB83iaa3cFYJ1PcSufKKhoOanqDy34aphuuBTsHgFHkYI7PVZaE6B8vDnGWvksKm9NFSLwdC3p-30bOWuObqlB78UnjtXN6hei0Vweoclag-FvdLUF1DjyzyVpQ-A6MqfS5ImNKQooQA0II3y5JTeJfa6rwF8z8GTAUZj3V2R-NxXRLbxxbgubHow');
+	var_dump($verifyResponse);
