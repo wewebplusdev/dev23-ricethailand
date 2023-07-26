@@ -1,0 +1,26 @@
+.btn{
+    background: none;position: relative;overflow: hidden;top: 0;z-index: 10; border: 1px solid $color-none; 
+    padding: 0 10px; min-width: 120px; height: 50px; line-height: 48px; font-size: 24px; font-weight: normal;
+	@include border-radius(30px);
+    &.fluid{min-width: inherit;width: 100%;position: relative;}
+    &:focus{ @include box-shadow(none);}
+}
+
+.btn-primary{
+    color: $color-light; background-color: $color-primary; border-color: $color-primary;
+    &:hover,&:active:hover, &.active:hover, &:active:focus,&.actitve:focus,&:active.focus,&.active.focus,&:focus:hover,
+    &.focus:hover{color: $color-primary; background-color: $color-light; border-color: $color-primary; }
+    &.disabled,&.disabled:hover{color: $color-light; background-color: $color-primary; border-color: $color-primary; opacity: 0.5;}
+}
+.btn-secondary{
+    color: $color-light; background-color: $color-secondary; border-color: $color-secondary;
+    &:hover,&:active:hover, &.active:hover, &:active:focus,&.actitve:focus,&:active.focus,&.active.focus,&:focus:hover,
+    &.focus:hover{color: $color-secondary; background-color: $color-light; border-color: $color-secondary; }
+    &.disabled,&.disabled:hover{color: $color-light; background-color: $color-secondary; border-color: $color-secondary; opacity: 0.5;}
+}
+.btn-outline-primary{
+    color: $color-primary; background-color: $color-light; border-color: $color-primary;
+    &:hover,&:active:hover, &.active:hover, &:active:focus,&.actitve:focus,&:active.focus,&.active.focus,&:focus:hover,
+    &.focus:hover{color: $color-light; background-color: $color-primary; border-color: $color-primary; }
+    &.disabled,&.disabled:hover{color: $color-primary; background-color: $color-light; border-color: $color-primary; opacity: 0.5;}
+}

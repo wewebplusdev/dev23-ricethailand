@@ -1,0 +1,46 @@
+.site-footer{
+    .sitemap{padding-top: 75px; padding-bottom: 65px;
+        background-image: url(../img/background/bg-footer.jpg);
+        background-position: center; background-repeat: no-repeat; background-size: cover;
+        .btn-sitemap{display: none;}
+        .h-title{font-size: 30px; font-weight: normal; line-height: 1em; color: $color-light;}
+        .address,
+        .fax,
+        .tel{padding-left: 30px; position: relative;}
+        .address{margin-top: 15px; font-size: 20px; font-weight: normal; line-height: 1.2em; color: $color-light;}
+        .fax{margin-top: 10px;font-size: 24px; font-weight: normal; line-height: 1.2em; color: $color-light;}
+        .tel{margin-top: 10px;font-size: 24px; font-weight: normal; line-height: 1.2em; color: $color-light;
+            .link{color: $color-light; position: relative;
+                &:before{content: ''; position: absolute; left: 0; right: 0; bottom: 0px; height: 1px; background-color: $color-light;
+                    @include transition(All 400ms ease); opacity: 0;
+                }
+                &:hover:before{opacity: 1;}
+            }
+        }
+        .icon{position: absolute; top: 0px; left: 0; max-width: 21px; max-height: 21px;}
+    }
+    .sitemap-list{margin-top: 20px;
+        li{width: 100%;
+            +li{margin-top: 10px;}
+        }
+        .link{font-size: 24px; font-weight: normal; line-height: 1em; color: $color-light; position: relative; display: inline;
+            &:before{content: ''; position: absolute; left: 0; right: 0; bottom: 0px; height: 1px; background-color: $color-light;
+                @include transition(All 400ms ease); opacity: 0;
+            }
+        }
+        li.active .link:before,
+        .link:hover:before{opacity: 1;}
+    }
+    .sitemap-list:hover .link{opacity: 0.5;}
+    .sitemap-list:hover .link:hover{opacity: 1;}
+    .social-list{margin-top: 25px;
+        li+li{margin-left: 10px;}
+        .link{position: relative; top: 0;}
+    }
+    .social-list:hover .link{opacity: 0.5;}
+    .social-list:hover .link:hover{opacity: 1; top: -3px;}
+    .visits{margin-top: 20px;}
+    .copyright{background-color: $color-light; padding: 18px 0;
+        .txt{font-size: 24px; font-weight: normal; line-height: 1; color: $color-primary; text-align: center;}
+    }
+}

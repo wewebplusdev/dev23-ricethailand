@@ -1,0 +1,40 @@
+.slick-prev:before,
+.slick-next:before{display: none;}
+.slick-prev:hover:before,
+.slick-next:hover:before{color: $color-primary;}
+.slick-prev, .slick-next{z-index: 1;
+    width: 55px; height: 55px; line-height: 58px; text-align: center;
+    border: 1px solid $color-primary; color: $color-primary; font-size: 24px;
+    @include border-radius(50%); @include transition(All 400ms ease);
+}
+.slick-prev{left: 50%; margin-left: -720px;}
+.slick-next{right: 50%; margin-right: -720px;}
+.slick-prev:hover, 
+.slick-prev:focus, 
+.slick-next:hover, 
+.slick-next:focus{background-color: $color-primary; color: $color-light;}
+.slick-dots{
+    li{width: auto; height: auto; margin: 0 8px;
+        position: relative; 
+        @include transition(All 400ms ease);
+        &:before{content: ''; position: absolute; top: -7px; left: -7px; right: -7px; bottom: -7px; border: 1px solid $color-primary;
+            @include transition(All 400ms ease); opacity: 0;
+            @include border-radius(50%);
+        }
+        button{
+            width: 16px;height: 16px; padding: 0; background: $color-primary;
+            @include border-radius(50%);
+            &:before{display: none;}
+        }
+        &.slick-active{
+            button{background: $color-primary;}
+            &:before{opacity: 1;}
+        }
+    }
+}
+.slick-dots:hover li{opacity: 0.5;}
+.slick-dots:hover li:hover{opacity: 1;}
+
+.slick-slide{
+    .item{float: left;}
+}

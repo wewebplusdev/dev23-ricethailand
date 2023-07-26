@@ -1,0 +1,1 @@
+<IMG SRC="/front/controller/script/contact/captcha/captcha.php?<?php echo microtime(); ?>"  BORDER="0"  width="150"   height="40"  style=" width:150px; height:40px;" alt="captcha" title="captcha">

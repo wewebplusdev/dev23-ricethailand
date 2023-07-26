@@ -1,0 +1,16 @@
+.page-service{position: relative; padding: 60px 0; overflow: hidden;
+    background-image: url(../img/background/bg-Pservice.jpg);
+	background-position: center bottom; background-repeat: no-repeat;
+    &:before{content: ''; position: absolute; width: 799px; height: 589px; top: -110px;left: 50%;margin-left: -1162px;
+		background-image: url(../img/static/ojb-Pservice.png); pointer-events: none;
+		background-size: contain; background-position: center; background-repeat: no-repeat;
+	}
+	.ojb{position: absolute; z-index: 1; pointer-events: none;}
+	.-ojbI{top: 240px; left: 50%; margin-left: -1160px; animation: circle-R 8s infinite linear;}
+	.-ojbII{top: 370px; left: 50%; margin-left: -790px; animation: circle-R-reverse 4s infinite linear;}
+    .-ojbIII{top: 460px; left: 50%; margin-left: -880px; animation: circle-R 4s infinite linear;}
+    .wg-service-slide{
+        .item-list{padding-bottom: 50px;}
+        .item{width: calc(100%/4); padding: 20px 0;}
+    }
+}

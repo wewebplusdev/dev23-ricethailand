@@ -1,0 +1,39 @@
+/* frameworks */
+@import "../scss/frameworks/mixins";
+@import "../scss/frameworks/layout";
+/* config */
+@import "../scss/config/colors";
+@import "../scss/config/font";
+@import "../scss/config/text";
+@import "../scss/config/base";
+/* components */
+@import "../scss/components/preloader";
+@import "../scss/components/menu";
+@import "../scss/components/mobile-menu";
+@import "../scss/components/slick";
+@import "../scss/components/breadcrumb";
+@import "../scss/components/pagination";
+@import "../scss/components/editor-content";
+@import "../scss/components/whead";
+@import "../scss/components/button";
+@import "../scss/components/form-control";
+@import "../scss/components/radio-control";
+@import "../scss/components/checkbox-control";
+@import "../scss/components/select2";
+@import "../scss/components/mCustomScrollbar";
+@import "../scss/components/modal";
+/* pages */
+@import '../scss/pages/default';
+@import "../scss/pages/home";
+@import "../scss/pages/contact";
+@import "../scss/pages/map";
+@import "../scss/pages/service";
+@import "../scss/pages/news";
+@import "../scss/pages/search";
+@import "../scss/pages/statistics";
+@import "../scss/pages/detail";
+@import "../scss/pages/about";
+/* layouts */
+@import "../scss/layouts/header";
+@import "../scss/layouts/footer";
+@import "../scss/layouts/breakpoints";

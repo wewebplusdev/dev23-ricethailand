@@ -1,0 +1,31 @@
+.whead{
+    margin-bottom: 60px;
+    .title{margin: 0;font-size: 60px;font-weight: bold;line-height: 1; color: $color-primary; position: relative;
+        &:before{content: ''; position: absolute; left: 0; bottom: -10px; 
+            width: 100px; height: 5px; background-color: $color-primary; margin: auto;
+        }
+        .desc{font-size: 40px; font-weight: normal; line-height: 0.9; color: $color-primary; display: block;}
+    }
+    .s-title{margin: 0;font-size: 36px;font-weight: bold;line-height: 1; color: $color-primary; position: relative;
+        &:before{content: ''; position: absolute; left: 0; bottom: -10px; 
+            width: 100px; height: 5px; background-color: $color-primary; margin: auto;
+        }
+        .desc{font-size: 30px; font-weight: normal; line-height: 0.9; color: $color-primary; display: block;}
+    }
+    .desc-title{margin: 0;font-size: 30px;font-weight: bold;line-height: 1; color: $color-primary; position: relative;
+        &:before{content: ''; position: absolute; left: 0; bottom: -10px; 
+            width: 100px; height: 5px; background-color: $color-primary; margin: auto;
+        }
+    }
+}
+.whead.t-cen{
+    .title{text-align: center;
+        &:before{right: 0;}
+    }
+    .s-title{text-align: center;
+        &:before{right: 0;}
+    }
+    .desc-title{text-align: center;
+        &:before{right: 0;}
+    }
+}

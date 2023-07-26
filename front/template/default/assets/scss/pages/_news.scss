@@ -1,0 +1,37 @@
+.page-news{position: relative; padding: 60px 0; overflow: hidden;
+    background-image: url(../img/background/bg-Pnews.jpg);
+	background-position: center; background-repeat: no-repeat; background-size: cover;
+    .wg-book{padding: 0; background-image:none; padding-bottom: 70px;}
+}
+.book-hilight{
+    .book-base{margin-bottom: -50px;}
+    .thumb{width: 305px;
+        @include box-shadow(5px 5px 10px 0 rgba(0,0,0,0.16));
+        .cover{position: relative; width: 100%; padding-top: 430px; overflow: hidden;
+            .lazy{position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                @include transition(All 400ms ease);
+            }
+        }
+    }
+    .thumb:hover{
+        .cover{
+            .lazy{transform: scale(1.1);}
+        }
+    }
+    .content{padding-left: 40px; padding-top: 40px;
+        .title{font-size: 48px; font-weight: bold; line-height: 1em; color: $color-dark;
+			overflow: hidden; max-height: 1em; display: -webkit-box; margin-bottom: 5px;
+			-webkit-box-orient: vertical;
+    		-webkit-line-clamp: 1;
+		}
+		.date{font-size: 30px; font-weight: normal; line-height: 1; color: #444444; margin-bottom: 10px;}
+		.desc{font-size: 30px; font-weight: normal; line-height: 1; color: #444444; margin-bottom: 10px;
+            overflow: hidden; max-height: 3em; display: -webkit-box;
+			-webkit-box-orient: vertical;
+    		-webkit-line-clamp: 3;
+        }
+        .action{padding-top: 40px; text-align: right;
+            .btn{min-width: 200px;}
+        }
+    }
+}

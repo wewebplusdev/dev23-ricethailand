@@ -1,0 +1,11 @@
+<svg id="bar-chart" xmlns="http://www.w3.org/2000/svg" width="20" height="19.888" viewBox="0 0 20 19.888">
+  <g id="Group_1365" data-name="Group 1365">
+    <g id="Group_1364" data-name="Group 1364">
+      <rect id="Rectangle_2153" data-name="Rectangle 2153" width="20" height="1" transform="translate(0 18.888)" fill="#0160d6"/>
+      <path id="Path_6449" data-name="Path 6449" d="M24.33,294.6h3.3a.33.33,0,0,0,.33-.33V288.33a.33.33,0,0,0-.33-.33h-3.3a.33.33,0,0,0-.33.33v5.942A.33.33,0,0,0,24.33,294.6Zm.33-5.942H27.3v5.282H24.66Z" transform="translate(-23.01 -276.117)" fill="#0160d6"/>
+      <path id="Path_6450" data-name="Path 6450" d="M248.33,202.563h3.3a.33.33,0,0,0,.33-.33v-9.9a.33.33,0,0,0-.33-.33h-3.3a.33.33,0,0,0-.33.33v9.9A.33.33,0,0,0,248.33,202.563Zm.33-9.9H251.3V201.9H248.66Z" transform="translate(-237.767 -184.078)" fill="#0160d6"/>
+      <path id="Path_6451" data-name="Path 6451" d="M136.33,110.524h3.3a.33.33,0,0,0,.33-.33V96.33a.33.33,0,0,0-.33-.33h-3.3a.33.33,0,0,0-.33.33v13.864A.33.33,0,0,0,136.33,110.524Zm.33-13.864H139.3v13.2H136.66Z" transform="translate(-130.388 -92.039)" fill="#0160d6"/>
+      <path id="Path_6452" data-name="Path 6452" d="M360.33,18.485h3.3a.33.33,0,0,0,.33-.33V.33a.33.33,0,0,0-.33-.33h-3.3a.33.33,0,0,0-.33.33V18.155A.33.33,0,0,0,360.33,18.485ZM360.66.66H363.3V17.825H360.66Z" transform="translate(-345.146)" fill="#0160d6"/>
+    </g>
+  </g>
+</svg>
