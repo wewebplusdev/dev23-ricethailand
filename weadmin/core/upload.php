@@ -1,4 +1,4 @@
-<?php  
+<?php
 @include("../lib/session.php");
 include("../lib/config.php");
 include("../lib/connect.php");
@@ -80,7 +80,7 @@ include("../lib/classpic.php");
 			$h = 50;
 			$thumbnail = resize($imgReal, $w, $h, $newfilename);
 
-		$update=array();
+		$update = array();
 		$update[]=$core_tb_staff."_picture  	='".$picname."'";
 		$sql="UPDATE ".$core_tb_staff." SET ".implode(",",$update)." WHERE ".$core_tb_staff."_id='".$_REQUEST["valID"]."'  ";
 		$Query=wewebQueryDB($coreLanguageSQL,$sql);

@@ -6,13 +6,13 @@
                     <img src="../img/iconmenu/1283582620_045.png" width="16" height="16" />
                 </td>
                 <td align="left" valign="top">
-                    <a href="../core/index.php" title="<?php   echo  $langTxt["nav:home2"] ?>"><?php   echo  $langTxt["nav:home2"] ?></a>
+                    <a href="../core/index.php" title="<?php echo  $langTxt["nav:home2"] ?>"><?php echo  $langTxt["nav:home2"] ?></a>
                 </td>
             </tr>
         </table>
     </div>
 
-    <?php  
+    <?php
     $sql_open = "SELECT  " . $core_tb_menu . "_parentid FROM " . $core_tb_menu . " WHERE " . $core_tb_menu . "_id='" . $menukeyid . "' AND " . $core_tb_menu . "_status='Enable' ORDER BY " . $core_tb_menu . "_order ASC ";
     $Query_open = wewebQueryDB($coreLanguageSQL, $sql_open);
     $Row_open = wewebFetchArrayDB($coreLanguageSQL, $Query_open);
@@ -65,30 +65,30 @@
                         $valNavImgNew = "../img/btn/nav.png";
                     }
                     ?>
-                    <div  class="<?php   echo  $valOpenNewMenu ?>" id="boxMenuLeftShow<?php   echo  $ParentID ?>" <?php   if ($status_open == $ParentID) { ?>onclick="clickOutSubMenuLeft('boxMenuLeftShow<?php   echo  $ParentID ?>', 'boxSubMenuLeftShow<?php   echo  $ParentID ?>', '<?php   echo  $valHeightSub ?>')"<?php   } else { ?>onclick="clickInSubMenuLeft('boxMenuLeftShow<?php   echo  $ParentID ?>', 'boxSubMenuLeftShow<?php   echo  $ParentID ?>', '<?php   echo  $valHeightSub ?>')"<?php   } ?> style="cursor:pointer; width: 100%;">
+                    <div  class="<?php echo  $valOpenNewMenu ?>" id="boxMenuLeftShow<?php echo  $ParentID ?>" <?php if ($status_open == $ParentID) { ?>onclick="clickOutSubMenuLeft('boxMenuLeftShow<?php echo  $ParentID ?>', 'boxSubMenuLeftShow<?php echo  $ParentID ?>', '<?php echo  $valHeightSub ?>')"<?php } else { ?>onclick="clickInSubMenuLeft('boxMenuLeftShow<?php echo  $ParentID ?>', 'boxSubMenuLeftShow<?php echo  $ParentID ?>', '<?php echo  $valHeightSub ?>')"<?php } ?> style="cursor:pointer; width: 100%;">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="divLeftMenuTb">
                             <tr>
                                 <td width="31"  align="left" valign="top">
-                                    <?php   if ($RowMenu[$core_tb_menu . "_icon"]) { ?><img src="<?php   echo  $RowMenu[$core_tb_menu . "_icon"] ?>" border="0" align="absmiddle" /><?php  
+                                    <?php if ($RowMenu[$core_tb_menu . "_icon"]) { ?><img src="<?php echo  $RowMenu[$core_tb_menu . "_icon"] ?>" border="0" align="absmiddle" /><?php
                                     } else {
                                         echo " - ";
                                     }
                                     ?>
                                 </td>
                                 <td align="left" valign="top">
-                                    <a  href="javascript:void(0)"   class="<?php   if ($status_open == $myMenuID) { ?>fontContantB<?php   } else { ?><?php   } ?>"><?php   echo  $txt_menu_lan ?></a>
-                                    <div style="float:right"><img src="<?php   echo  $valNavImgNew ?>" /></div>
+                                    <a  href="javascript:void(0)"   class="<?php if ($status_open == $myMenuID) { ?>fontContantB<?php } else { ?><?php } ?>"><?php echo  $txt_menu_lan ?></a>
+                                    <div style="float:right"><img src="<?php echo  $valNavImgNew ?>" /></div>
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="clearAll"></div>
-                    <div   <?php   if ($status_open == $ParentID) { ?><?php   } else { ?>style="height:0px;display:none;"<?php   } ?>  id="boxSubMenuLeftShow<?php   echo  $ParentID ?>" class="divmenu">
-                        <?php  
+                    <div   <?php if ($status_open == $ParentID) { ?><?php } else { ?>style="height:0px;display:none;"<?php } ?>  id="boxSubMenuLeftShow<?php echo  $ParentID ?>" class="divmenu">
+                        <?php
                         if ($RecordCountSub >= 1) {
                             ?>
                             <!--                    <div class="divLeftSubMenuEnd"></div>
-                            -->                        <?php  
+                            -->                        <?php
                             while ($RowSub = wewebFetchArrayDB($coreLanguageSQL, $Query2)) {
 
                                 $masterkeyName = $RowSub[$core_tb_menu . "_masterkey"];
@@ -113,24 +113,24 @@
 
                                 if ($permissionID != "NA" || $_SESSION[$valSiteManage . "core_session_level"] == "SuperAdmin") {
                                     ?>
-                                    <div  class="<?php   if ($menukeyid == $myMenuID) { ?>divLeftSubMenuOver<?php   } else { ?>divLeftSubMenu<?php   } ?>"  >
+                                    <div  class="<?php if ($menukeyid == $myMenuID) { ?>divLeftSubMenuOver<?php } else { ?>divLeftSubMenu<?php } ?>"  >
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="divLeftSubMenuTb">
                                             <tr>
                                                 <td width="31"  align="left" valign="top">
-                                                    <?php   if ($RowSub[$core_tb_menu . "_icon"]) { ?><img src="<?php   echo  $RowSub[$core_tb_menu . "_icon"] ?>" border="0" align="absmiddle"  hspace="5" height="16" width="16" /><?php  
+                                                    <?php if ($RowSub[$core_tb_menu . "_icon"]) { ?><img src="<?php echo  $RowSub[$core_tb_menu . "_icon"] ?>" border="0" align="absmiddle"  hspace="5" height="16" width="16" /><?php
                                                     } else {
                                                         echo " - ";
                                                     }
                                                     ?>
                                                 </td>
                                                 <td align="left" valign="top">
-                                                    <a href="<?php   echo  $linkFileTo ?>" target="<?php   echo  $linkTaget ?>" class="<?php   if ($menukeyid == $myMenuID) { ?>fontContantSubMenu<?php   } else { ?><?php   } ?>" ><?php   echo  $txt_menu_sublan ?></a>
+                                                    <a href="<?php echo  $linkFileTo ?>" target="<?php echo  $linkTaget ?>" class="<?php if ($menukeyid == $myMenuID) { ?>fontContantSubMenu<?php } else { ?><?php } ?>" ><?php echo  $txt_menu_sublan ?></a>
                                                 </td>
                                             </tr>
                                         </table>
                                     </div>
                                     <div class="clearAll"></div>
-                                    <?php  
+                                    <?php
                                 } // End if permission Sub Group
                             } //End  while  Sub Group
                         }  // End else Sub Group 
@@ -138,12 +138,12 @@
                     </div>
                     <div class="clearAll"></div>
 
-                <?php   } else { ?> 
-                    <div  class="<?php   if ($menukeyid == $myMenuID) { ?>divLeftMenuOver<?php   } else { ?>divLeftMenu<?php   } ?>">
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="<?php   if ($menukeyid == $myMenuID) { ?><?php   } else { ?>divLeftMenuTb<?php   } ?>">
+                <?php } else { ?> 
+                    <div  class="<?php if ($menukeyid == $myMenuID) { ?>divLeftMenuOver<?php } else { ?>divLeftMenu<?php } ?>">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="<?php if ($menukeyid == $myMenuID) { ?><?php } else { ?>divLeftMenuTb<?php } ?>">
                             <tr>
                                 <td width="31"  align="left" valign="top">
-                                    <?php   if ($RowMenu[$core_tb_menu . "_icon"]) { ?><img src="<?php   echo  $RowMenu[$core_tb_menu . "_icon"] ?>" border="0" align="absmiddle"  /><?php  
+                                    <?php if ($RowMenu[$core_tb_menu . "_icon"]) { ?><img src="<?php echo  $RowMenu[$core_tb_menu . "_icon"] ?>" border="0" align="absmiddle"  /><?php
                                     } else {
                                         echo " - ";
                                     }
@@ -151,13 +151,13 @@
 
                                 </td>
                                 <td align="left" valign="top">
-                                    <a href="<?php   echo  $linkFileTo ?>" target="<?php   echo  $linkTaget ?>" class="<?php   if ($menukeyid == $myMenuID) { ?>fontContantB<?php   } else { ?><?php   } ?>"><?php   echo  $txt_menu_lan ?></a>
+                                    <a href="<?php echo  $linkFileTo ?>" target="<?php echo  $linkTaget ?>" class="<?php if ($menukeyid == $myMenuID) { ?>fontContantB<?php } else { ?><?php } ?>"><?php echo  $txt_menu_lan ?></a>
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="clearAll"></div>
-                    <?php  
+                    <?php
                 } // End else Group
             } // End if permission
         } // End  while 
@@ -170,7 +170,7 @@
                     <img src="../img/iconmenu/1283582582_150.png" width="16" height="16" />
                 </td>
                 <td align="left" valign="top">
-                    <a href="javascript:void(0)"onclick="checkLogoutUser();" title="<?php   echo  $langTxt["menu:logout"] ?>"><?php   echo  $langTxt["menu:logout"] ?></a>
+                    <a href="javascript:void(0)"onclick="checkLogoutUser();" title="<?php echo  $langTxt["menu:logout"] ?>"><?php echo  $langTxt["menu:logout"] ?></a>
                 </td>
             </tr>
         </table>

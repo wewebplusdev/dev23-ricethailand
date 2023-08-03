@@ -1,4 +1,4 @@
-<?php  
+<?php
 @include("../lib/session.php");
 include("../lib/config.php");
 include("../lib/connect.php");
@@ -9,6 +9,6 @@ $sql = "DELETE FROM ".$core_tb_sort." WHERE ".$core_tb_sort."_id='".$_REQUEST["d
 $Query=wewebQueryDB($coreLanguageSQL,$sql);	
 
 ?>
-<?php   include("../lib/disconnect.php");?>
+<?php include("../lib/disconnect.php");?>
 
 

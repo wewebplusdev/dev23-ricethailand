@@ -1,0 +1,65 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 26, 2017 at 09:00 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 5.6.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `neda`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_cmsg`
+--
+
+CREATE TABLE `md_cmsg` (
+  `md_cmsg_id` int(11) NOT NULL,
+  `md_cmsg_masterkey` varchar(20) NOT NULL,
+  `md_cmsg_language` varchar(50) NOT NULL,
+  `md_cmsg_subject` varchar(200) NOT NULL,
+  `md_cmsg_title` text NOT NULL,
+  `md_cmsg_crebyid` int(11) NOT NULL DEFAULT '0',
+  `md_cmsg_creby` varchar(100) NOT NULL,
+  `md_cmsg_credate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_cmsg_lastdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_cmsg_status` varchar(50) NOT NULL,
+  `md_cmsg_order` int(11) NOT NULL DEFAULT '0',
+  `md_cmsg_subjecten` varchar(255) NOT NULL,
+  `md_cmsg_titleen` text NOT NULL,
+  `md_cmsg_lastbyid` int(11) NOT NULL,
+  `md_cmsg_lastby` varchar(255) NOT NULL,
+  `md_cmsg_pic` varchar(255) NOT NULL,
+  `md_cmsg_gid` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `md_cmsg`
+--
+ALTER TABLE `md_cmsg`
+  ADD PRIMARY KEY (`md_cmsg_id`),
+  ADD UNIQUE KEY `md_cmsg_id` (`md_cmsg_id`),
+  ADD KEY `md_cmsg_id_2` (`md_cmsg_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `md_cmsg`
+--
+ALTER TABLE `md_cmsg`
+  MODIFY `md_cmsg_id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;

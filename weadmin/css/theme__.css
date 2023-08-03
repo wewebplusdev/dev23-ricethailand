@@ -1,0 +1,307 @@
+a {
+    color: #54c1ca;
+}
+.list-table span.active ,
+.btn-primary {
+    background-color: #54c1ca !important;
+}
+.box-Rice-nav ,
+.btn-primary {
+    border-color: #54c1ca !important;
+}
+.box-Head a i ,
+.box-Rice-nav ,
+.form-bg-white .panel-title>a::after ,
+.form-bg-light .panel-title>a::after {
+    color: #54c1ca !important;
+}
+.pagination>.active>a ,
+.pagination>.active>a:focus ,
+.pagination>.active>a:hover ,
+.pagination>.active>span ,
+.pagination>.active>span:focus ,
+.pagination>.active>span:hover {
+    background-color: #54c1ca;
+    border-color: #54c1ca;
+}
+
+/***** color1 ********/
+body.color1 a {
+    color: #3bc1ca;
+}
+body.color1 .list-table span.active ,
+body.color1 .btn-primary {
+    background-color: #3bc1ca !important;
+}
+body.color1 .box-Rice-nav ,
+body.color1 .btn-primary {
+    border-color: #3bc1ca !important;
+}
+body.color1 .box-Head a i ,
+body.color1 .box-Rice-nav ,
+body.color1 .form-bg-white .panel-title>a::after ,
+body.color1 .form-bg-light .panel-title>a::after {
+    color: #3bc1ca !important;
+}
+body.color1 .pagination>.active>a ,
+body.color1 .pagination>.active>a:focus ,
+body.color1 .pagination>.active>a:hover ,
+body.color1 .pagination>.active>span ,
+body.color1 .pagination>.active>span:focus ,
+body.color1 .pagination>.active>span:hover {
+    background-color: #3bc1ca;
+    border-color: #3bc1ca;
+}
+
+/***** color2 ********/
+body.color2 a {
+    color: #55c38c;
+}
+body.color2 .list-table span.active ,
+body.color2 .btn-primary {
+    background-color: #55c38c !important;
+}
+body.color2 .box-Rice-nav ,
+body.color2 .btn-primary {
+    border-color: #55c38c !important;
+}
+body.color2 .box-Head a i ,
+body.color2 .box-Rice-nav ,
+body.color2 .form-bg-white .panel-title>a::after ,
+body.color2 .form-bg-light .panel-title>a::after {
+    color: #55c38c !important;
+}
+body.color2 .pagination>.active>a ,
+body.color2 .pagination>.active>a:focus ,
+body.color2 .pagination>.active>a:hover ,
+body.color2 .pagination>.active>span ,
+body.color2 .pagination>.active>span:focus ,
+body.color2 .pagination>.active>span:hover {
+    background-color: #55c38c;
+    border-color: #55c38c;
+}
+
+/***** color3 ********/
+body.color3 a {
+    color: #9f9ece;
+}
+body.color3 .list-table span.active ,
+body.color3 .btn-primary {
+    background-color: #9f9ece !important;
+}
+body.color3 .box-Rice-nav ,
+body.color3 .btn-primary {
+    border-color: #9f9ece !important;
+}
+body.color3 .box-Head a i ,
+body.color3 .box-Rice-nav ,
+body.color3 .form-bg-white .panel-title>a::after ,
+body.color3 .form-bg-light .panel-title>a::after {
+    color: #9f9ece !important;
+}
+body.color3 .pagination>.active>a ,
+body.color3 .pagination>.active>a:focus ,
+body.color3 .pagination>.active>a:hover ,
+body.color3 .pagination>.active>span ,
+body.color3 .pagination>.active>span:focus ,
+body.color3 .pagination>.active>span:hover {
+    background-color: #9f9ece;
+    border-color: #9f9ece;
+}
+
+/***** color4 ********/
+body.color4 a {
+    color: #d89b44;
+}
+body.color4 .list-table span.active ,
+body.color4 .btn-primary {
+    background-color: #d89b44 !important;
+}
+body.color4 .box-Rice-nav ,
+body.color4 .btn-primary {
+    border-color: #d89b44 !important;
+}
+body.color4 .box-Head a i ,
+body.color4 .box-Rice-nav ,
+body.color4 .form-bg-white .panel-title>a::after ,
+body.color4 .form-bg-light .panel-title>a::after {
+    color: #d89b44 !important;
+}
+body.color4 .pagination>.active>a ,
+body.color4 .pagination>.active>a:focus ,
+body.color4 .pagination>.active>a:hover ,
+body.color4 .pagination>.active>span ,
+body.color4 .pagination>.active>span:focus ,
+body.color4 .pagination>.active>span:hover {
+    background-color: #d89b44;
+    border-color: #d89b44;
+}
+
+/***** color5 ********/
+body.color5 a {
+    color: #e2907a;
+}
+body.color5 .list-table span.active ,
+body.color5 .btn-primary {
+    background-color: #e2907a !important;
+}
+body.color5 .box-Rice-nav ,
+body.color5 .btn-primary {
+    border-color: #e2907a !important;
+}
+body.color5 .box-Head a i ,
+body.color5 .box-Rice-nav ,
+body.color5 .form-bg-white .panel-title>a::after ,
+body.color5 .form-bg-light .panel-title>a::after {
+    color: #e2907a !important;
+}
+body.color5 .pagination>.active>a ,
+body.color5 .pagination>.active>a:focus ,
+body.color5 .pagination>.active>a:hover ,
+body.color5 .pagination>.active>span ,
+body.color5 .pagination>.active>span:focus ,
+body.color5 .pagination>.active>span:hover {
+    background-color: #e2907a;
+    border-color: #e2907a;
+}
+
+/***** color6 ********/
+body.color6 a {
+    color: #e2ae9f;
+}
+body.color6 .list-table span.active ,
+body.color6 .btn-primary {
+    background-color: #e2ae9f !important;
+}
+body.color6 .box-Rice-nav ,
+body.color6 .btn-primary {
+    border-color: #e2ae9f !important;
+}
+body.color6 .box-Head a i ,
+body.color6 .box-Rice-nav ,
+body.color6 .form-bg-white .panel-title>a::after ,
+body.color6 .form-bg-light .panel-title>a::after {
+    color: #e2ae9f !important;
+}
+body.color6 .pagination>.active>a ,
+body.color6 .pagination>.active>a:focus ,
+body.color6 .pagination>.active>a:hover ,
+body.color6 .pagination>.active>span ,
+body.color6 .pagination>.active>span:focus ,
+body.color6 .pagination>.active>span:hover {
+    background-color: #e2ae9f;
+    border-color: #e2ae9f;
+}
+
+/***** color7 ********/
+body.color7 a {
+    color: #679bb3;
+}
+body.color7 .list-table span.active ,
+body.color7 .btn-primary {
+    background-color: #679bb3 !important;
+}
+body.color7 .box-Rice-nav ,
+body.color7 .btn-primary {
+    border-color: #679bb3 !important;
+}
+body.color7 .box-Head a i ,
+body.color7 .box-Rice-nav ,
+body.color7 .form-bg-white .panel-title>a::after ,
+body.color7 .form-bg-light .panel-title>a::after {
+    color: #679bb3 !important;
+}
+body.color7 .pagination>.active>a ,
+body.color7 .pagination>.active>a:focus ,
+body.color7 .pagination>.active>a:hover ,
+body.color7 .pagination>.active>span ,
+body.color7 .pagination>.active>span:focus ,
+body.color7 .pagination>.active>span:hover {
+    background-color: #679bb3;
+    border-color: #679bb3;
+}
+
+/***** color8 ********/
+body.color8 a {
+    color: #9ab6c3;
+}
+body.color8 .list-table span.active ,
+body.color8 .btn-primary {
+    background-color: #9ab6c3 !important;
+}
+body.color8 .box-Rice-nav ,
+body.color8 .btn-primary {
+    border-color: #9ab6c3 !important;
+}
+body.color8 .box-Head a i ,
+body.color8 .box-Rice-nav ,
+body.color8 .form-bg-white .panel-title>a::after ,
+body.color8 .form-bg-light .panel-title>a::after {
+    color: #9ab6c3 !important;
+}
+body.color8 .pagination>.active>a ,
+body.color8 .pagination>.active>a:focus ,
+body.color8 .pagination>.active>a:hover ,
+body.color8 .pagination>.active>span ,
+body.color8 .pagination>.active>span:focus ,
+body.color8 .pagination>.active>span:hover {
+    background-color: #9ab6c3;
+    border-color: #9ab6c3;
+}
+
+/***** color9 ********/
+body.color9 a {
+    color: #62a986;
+}
+body.color9 .list-table span.active ,
+body.color9 .btn-primary {
+    background-color: #62a986 !important;
+}
+body.color9 .box-Rice-nav ,
+body.color9 .btn-primary {
+    border-color: #62a986 !important;
+}
+body.color9 .box-Head a i ,
+body.color9 .box-Rice-nav ,
+body.color9 .form-bg-white .panel-title>a::after ,
+body.color9 .form-bg-light .panel-title>a::after {
+    color: #62a986 !important;
+}
+body.color9 .pagination>.active>a ,
+body.color9 .pagination>.active>a:focus ,
+body.color9 .pagination>.active>a:hover ,
+body.color9 .pagination>.active>span ,
+body.color9 .pagination>.active>span:focus ,
+body.color9 .pagination>.active>span:hover {
+    background-color: #62a986;
+    border-color: #62a986;
+}
+
+
+/***** color10 ********/
+body.color10 a {
+    color: #FA8072;
+}
+body.color10 .list-table span.active ,
+body.color10 .btn-primary {
+    background-color: #FA8072 !important;
+}
+body.color10 .box-Rice-nav ,
+body.color10 .btn-primary {
+    border-color: #FA8072 !important;
+}
+body.color10 .box-Head a i ,
+body.color10 .box-Rice-nav ,
+body.color10 .form-bg-white .panel-title>a::after ,
+body.color10 .form-bg-light .panel-title>a::after {
+    color: #FA8072 !important;
+}
+body.color10 .pagination>.active>a ,
+body.color10 .pagination>.active>a:focus ,
+body.color10 .pagination>.active>a:hover ,
+body.color10 .pagination>.active>span ,
+body.color10 .pagination>.active>span:focus ,
+body.color10 .pagination>.active>span:hover {
+    background-color: #FA8072;
+    border-color: #FA8072;
+}

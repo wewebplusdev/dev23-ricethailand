@@ -1,4 +1,4 @@
-<?php  
+<?php
 include("../lib/session.php");
 include("../lib/config.php");
 
@@ -649,8 +649,8 @@ function jt_get_font_icons() {
             <meta name="googlebot" content="noindex, nofollow">
                 <link href="../css/theme.css" rel="stylesheet"/>
                 <link href="../css/font-awesome.min.css" rel="stylesheet"/>
-                <title><?php   echo  $core_name_title ?></title>
-                <script language="JavaScript"  type="text/javascript" src="../js/jquery-3.7.0.min.js"></script>
+                <title><?php echo  $core_name_title ?></title>
+                <script language="JavaScript"  type="text/javascript" src="../js/jquery-1.9.0.js"></script>
                 <script language="JavaScript"  type="text/javascript" src="../js/jquery.blockUI.js"></script>
                 <script language="JavaScript"  type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
                 </head>
@@ -667,7 +667,7 @@ function jt_get_font_icons() {
                                                 <tr> 
                                                     <td > <table border="0" cellpadding="0" cellspacing="1" class="table_border">
 
-                                                            <?php  
+                                                            <?php
                                                             // print_r(jt_get_font_icons());
                                                             $i = 0;
 
@@ -676,8 +676,8 @@ function jt_get_font_icons() {
                                                                     echo '</tr><tr>';
                                                                 }
                                                                 ?>
-                                                                <td width="30" height="30" align="center"><i class="fa <?php   echo  $nameIcon ?>" onClick="setIconSelected('fa <?php   echo  $nameIcon ?>')"> </i></td>
-                                                                <?php  
+                                                                <td width="30" height="30" align="center"><i class="fa <?php echo  $nameIcon ?>" onClick="setIconSelected('fa <?php echo  $nameIcon ?>')"> </i></td>
+                                                                <?php
                                                                 $i++;
                                                             }
                                                             ?>

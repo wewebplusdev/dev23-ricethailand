@@ -1,4 +1,4 @@
-<?php 	
+<?php	
 include("../lib/session.php");
 include("../lib/config.php");
 include("../lib/connect.php");
@@ -12,9 +12,8 @@ include("../lib/checkMember.php");
 		$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 		$maxOrder = $Row[0]+1;
 		
-		$insert=array();
+		$insert = array();
 		$insert[$core_tb_staff."_groupid"] = "'".changeQuot($_REQUEST['inputgroupid'])."'";
-		$insert[$core_tb_staff."_storeid"] = "'".changeQuot($_REQUEST['inputStoreID'])."'";
 		$insert[$core_tb_staff."_username"] = "'".changeQuot($_REQUEST['inputUserName'])."'";
 		$insert[$core_tb_staff."_password"] = "'".encodeStr(changeQuot($_REQUEST['inputPassword']))."'";
 		$insert[$core_tb_staff."_prefix"] = "'".changeQuot($_REQUEST['inputPrefix'])."'";
@@ -25,7 +24,6 @@ include("../lib/checkMember.php");
 		$insert[$core_tb_staff."_lnameeng"] = "'".changeQuot($_REQUEST['inputlnameeng'])."'";
 		
 		$insert[$core_tb_staff."_position"] = "'".changeQuot($_REQUEST['inputPosirionUser'])."'";	
-		$insert[$core_tb_staff."_usertype"] = "'".changeQuot($_REQUEST['inputTypeUser'])."'";	
 
 		$insert[$core_tb_staff."_email"] = "'".changeQuot($_REQUEST['inputemail'])."'";		
 		$insert[$core_tb_staff."_address"] = "'".changeQuot($_REQUEST['inputlocation'])."'";
@@ -36,25 +34,22 @@ include("../lib/checkMember.php");
 		$insert[$core_tb_staff."_creby"] = "'".$_SESSION[$valSiteManage.'core_session_name']."'";
 		$insert[$core_tb_staff."_credate"] = "".wewebNow($coreLanguageSQL)."";
 		$insert[$core_tb_staff."_lastdate"] = "".wewebNow($coreLanguageSQL)."";
-		$insert[$core_tb_staff."_unitid"] = "'".changeQuot($_REQUEST['inputFixid'])."'";
-		$insert[$core_tb_staff."_unitid_sub"] = "'".changeQuot($_REQUEST['inputFixSubid'])."'";
-		$insert[$core_tb_staff."_agency"] = "'".changeQuot($_REQUEST['inputgroupAgency'])."'";
 		$insert[$core_tb_staff."_status"] = "'Disable'";
 		$insert[$core_tb_staff."_order"] = "'".$maxOrder."'";
+		$insert[$core_tb_staff."_typeuser"] = "'".$_REQUEST['inputTypeUser']."'";
 		$sql="INSERT INTO ".$core_tb_staff."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
-		// print_pre($sql);die;
 		$Query=wewebQueryDB($coreLanguageSQL,$sql);	
 
 					
 			
 		 logs_access('2','Insert');
 		 } ?>
-<?php  include("../lib/disconnect.php");?>
+<?php include("../lib/disconnect.php");?>
 <form action="../core/userManage.php" method="post" name="myFormAction" id="myFormAction">
-    <input name="masterkey" type="hidden" id="masterkey" value="<?php  echo $_REQUEST['masterkey']?>" />
-    <input name="menukeyid" type="hidden" id="menukeyid" value="<?php  echo $_REQUEST['menukeyid']?>" />
-    <input name="inputSearch" type="hidden" id="inputSearch" value="<?php  echo $_REQUEST['inputSearch']?>" />
-    <input name="inputGh" type="hidden" id="inputGh" value="<?php  echo $_REQUEST['inputgroupid']?>" />
-    <input name="inputUT" type="hidden" id="inputUT" value="<?php  echo $_REQUEST['inputTypeUser']?>" />
+    <input name="masterkey" type="hidden" id="masterkey" value="<?php echo $_REQUEST['masterkey']?>" />
+    <input name="menukeyid" type="hidden" id="menukeyid" value="<?php echo $_REQUEST['menukeyid']?>" />
+    <input name="inputSearch" type="hidden" id="inputSearch" value="<?php echo $_REQUEST['inputSearch']?>" />
+    <input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputgroupid']?>" />
+    <input name="inputUT" type="hidden" id="inputUT" value="<?php echo $_REQUEST['inputTypeUser']?>" />
 </form>            
 <script language="JavaScript" type="text/javascript"> document.myFormAction.submit(); </script>

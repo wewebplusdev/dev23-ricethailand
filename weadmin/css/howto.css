@@ -1,0 +1,179 @@
+
+body {
+	align-items: center;
+	font-family: 'Prompt', sans-serif;
+	margin: 0px;
+}
+	h1.head {
+	    margin: 0px;
+	    text-align: center;
+	    font-size: 20px;
+	    padding: 25px;
+	    border-top: 5px solid #8f6408;
+	    color: #287b45;
+        background: #ecde94 url(../img/bg-howto.jpg) no-repeat center;
+	    background-size: 100% 100%;
+	}
+	
+	.box-head {
+	    background: #ca9d27 url(../img/bg-login.jpg) no-repeat center;
+	    background-size: cover;
+	    color: #ffffff;
+	    text-align: center;
+	    padding: 20px;
+	}
+		.box-head ul {
+			margin: 0px auto;
+			padding: 15px 10px 0px 10px;
+			display: table;
+			width: 100%;
+			max-width: 1000px;
+		}
+			.box-head li {
+				list-style: none;
+				float: left;
+				width: 33.33%;
+			}
+				.box-head li i {
+				    background: #e9c54e;
+				    padding: 5px;
+				    display: block;
+				    border-radius: 50%;
+				    width: 30px;
+				    height: 30px;
+				    font-style: normal;
+				    text-align: center;
+				    margin: auto;
+				    margin-bottom: 5px;
+				}
+				
+	h1 {
+		text-align: center;
+		color: #636363;
+		font-weight: bold;
+	    font-size: 20px;
+	}
+	.box-table {
+	    width: 100%;
+	    overflow: auto;
+	}
+		.box-table table {
+			width: 90%;
+			margin: auto;
+			margin-top: 20px;
+		    margin-bottom: 20px;
+		    min-width: 1000px;
+		}
+			.box-table table thead {
+				
+			}
+				.box-table table th {
+				    background: #287b45;
+				    color: #fff;
+				    text-align: center;
+				    border: 1px solid #fff;
+				    padding: 10px 20px;
+				}
+				
+			.box-table table tbody {
+				color: #636363;
+			    counter-reset: order;
+			}
+				.box-table table td {
+				    border: 1px solid #e3e3e3;
+				    padding: 10px;
+				    text-align: center;
+				    vertical-align: top;
+				}
+				.box-table table td.order::after {
+				    content: counters(order, ".") " ";
+				    counter-increment: order;
+				}
+				.box-table table td.text-left {
+					text-align: left;
+				}
+					.box-table table td ul {
+					    padding-left: 18px;
+					    margin-top: 6px;
+					}
+						.box-table table td li {
+						    margin-top: 4px;
+						}
+							.box-table table td li .code {
+							    float: left;
+							}
+					
+					.box-table table td .code {
+				        font-weight: bold;
+					    letter-spacing: 1px;
+					    margin: 0px 12px 0px 2px;
+					}
+						.box-table table td .code i {
+						    font-style: normal;
+						    margin: 0px -3px;
+						}
+						.box-table table td .code i.s1 {
+						    background: #e9c54e;
+						    padding: 0px 3px;
+						    color: #392c25;
+						}
+						.box-table table td .code i.s2 {
+						    color: #d74200;
+						}
+						.box-table table td .code i.s3 {
+						    color: #287b45;
+						}
+						.box-table table td .code i.s4 {
+						    color: #3c2dcd;
+						}
+						.box-table table td .code i.s5 {
+						    color: #d78900;
+						}
+						.box-table table td .code i.s6 {
+						    color: #941ae1;
+						}
+						.box-table table td .code i.s7 {
+						    color: #12b30e;
+						}
+					
+/* ---------------------------------------------------**** mobile and Tablet ****--------------------------------------------------- */
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+	h1.head {
+	    font-size: 17px;
+	}
+	h1 {
+	    font-size: 17px;
+	}
+}
+
+/* ---------------------------------------------------**** mobile ****--------------------------------------------------- */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+	.box-head li {
+	    width: 80%;
+	    margin: 0px auto 13px auto;
+	    float: none;
+	}
+
+	/* -------------------**** แนวตั้ง ****-------------------- */
+	@media only screen and (orientation:portrait){
+
+	}
+	/* -------------------**** แนวนอน ****------------------- */
+	@media only screen and (orientation:landscape){
+
+	}
+}
+
+/* ---------------------------------------------------**** Tablet ****--------------------------------------------------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+		
+	/* -------------------**** แนวตั้ง ****-------------------- */
+	@media only screen and (orientation:portrait){
+
+	}
+	/* -------------------**** แนวนอน ****------------------- */
+	@media only screen and (orientation:landscape){
+
+	}
+
+}

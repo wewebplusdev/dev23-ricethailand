@@ -1,4 +1,4 @@
-<?php  
+<?php
 include("../lib/session.php");
 include("../lib/config.php");
 include("../lib/connect.php");
@@ -18,8 +18,8 @@ $valNav2=$langTxt["home:box"];
 <meta name="googlebot" content="noindex, nofollow">
 
 <link href="../css/theme.css" rel="stylesheet"/>
-<title><?php   echo $core_name_title?></title>
-<script language="JavaScript"  type="text/javascript" src="../js/jquery-3.7.0.min.js"></script>
+<title><?php echo $core_name_title?></title>
+<script language="JavaScript"  type="text/javascript" src="../js/jquery-1.9.0.js"></script>
 <script language="JavaScript"  type="text/javascript" src="../js/jquery.blockUI.js"></script>
 <script language="JavaScript"  type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
 <script type="text/javascript" language="javascript">
@@ -30,17 +30,17 @@ $valNav2=$langTxt["home:box"];
 
 <body>
 <form action="?" method="post" name="myForm" id="myForm">
-<input name="masterkey" type="hidden" id="masterkey" value="<?php   echo $_REQUEST['masterkey']?>" />
-<input name="menukeyid" type="hidden" id="menukeyid" value="<?php   echo $_REQUEST['menukeyid']?>" />
+<input name="masterkey" type="hidden" id="masterkey" value="<?php echo $_REQUEST['masterkey']?>" />
+<input name="menukeyid" type="hidden" id="menukeyid" value="<?php echo $_REQUEST['menukeyid']?>" />
 
 					<div class="divRightNav">
                         <table width="96%" border="0" cellspacing="0" cellpadding="0"  align="center" >
                         <tr>
-                        <td  class="divRightNavTb" align="left"><span class="fontContantTbNav"><a href="<?php   echo $valLinkNav1?>" target="_self"><?php   echo $valNav1?></a> <img src="../img/btn/nav.png" align="absmiddle" vspace="5" /> <?php   echo $valNav2?></span></td>
+                        <td  class="divRightNavTb" align="left"><span class="fontContantTbNav"><a href="<?php echo $valLinkNav1?>" target="_self"><?php echo $valNav1?></a> <img src="../img/btn/nav.png" align="absmiddle" vspace="5" /> <?php echo $valNav2?></span></td>
                         <td  class="divRightNavTb" align="right">
                         <table  border="0" cellspacing="0" cellpadding="0" align="right">
   <tr>
-    <td align="right"><input name="inputSearch" type="text"  id="inputSearch" value="<?php   echo trim($_REQUEST['inputSearch'])?>" class="inputContantTb"/></td>
+    <td align="right"><input name="inputSearch" type="text"  id="inputSearch" value="<?php echo trim($_REQUEST['inputSearch'])?>" class="inputContantTb"/></td>
     <td align="right"><input name="searchOk" id="searchOk" onClick="document.myForm.submit();"  type="button" class="btnSearch"  value=" "  /></td>
   </tr>
 </table>
@@ -53,8 +53,8 @@ $valNav2=$langTxt["home:box"];
                             <div class="divRightHead">
                                 <table width="96%" border="0" cellspacing="0" cellpadding="0" class="borderBottom" align="center" >
                                   <tr>
-                                    <td width="93%" height="77" align="left"><span class="fontHeadRight"><?php   echo $valNav2?></span></td>
-                                    <td width="7%" align="right"> <div  class="btnBack" title="<?php   echo $langTxt["btn:back"]?>" onclick="window.open('<?php   echo $valLinkNav1?>','_self');"  ></div></td>
+                                    <td width="93%" height="77" align="left"><span class="fontHeadRight"><?php echo $valNav2?></span></td>
+                                    <td width="7%" align="right"> <div  class="btnBack" title="<?php echo $langTxt["btn:back"]?>" onclick="window.open('<?php echo $valLinkNav1?>','_self');"  ></div></td>
                                   </tr>
                                 </table>
                             </div>
@@ -63,10 +63,10 @@ $valNav2=$langTxt["home:box"];
 <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxListwBorder">
    <tr ><td width="2%"  class="divRightTitleTbL"  valign="middle" align="center" >&nbsp;</td>
 
-    <td width="86%" align="left"   valign="middle"  class="divRightTitleTb" ><span class="fontTitlTbRight"><?php   echo $langTxt["mg:subject"]?></span></td>
-    <td width="12%"  class="divRightTitleTbR"  valign="middle"  align="center"><span class="fontTitlTbRight"><?php   echo $langTxt["mg:manage"]?></span></td>
+    <td width="86%" align="left"   valign="middle"  class="divRightTitleTb" ><span class="fontTitlTbRight"><?php echo $langTxt["mg:subject"]?></span></td>
+    <td width="12%"  class="divRightTitleTbR"  valign="middle"  align="center"><span class="fontTitlTbRight"><?php echo $langTxt["mg:manage"]?></span></td>
   </tr>
-  <?php   
+  <?php 
 	 $myParentID=0;
 	 $sql = "SELECT * FROM ".$core_tb_menu." WHERE ".$core_tb_menu."_parentid='".$myParentID."' AND ".$core_tb_menu."_moduletype!='Link' ";
 	$inputSearch =trim($_REQUEST['inputSearch']); 
@@ -120,50 +120,50 @@ if($inputSearch<>"") {
 	$rowBox=wewebFetchArrayDB($coreLanguageSQL,$queryBox)	;
 	$valBoxID=$rowBox[0];
   ?>
-  <tr class="<?php   echo $valDivTr?>" >
+  <tr class="<?php echo $valDivTr?>" >
      <td  class="divRightContantOverTbL"  valign="top" align="center" >&nbsp;</td>
-    <td  class="divRightContantOverTb"   valign="top" align="left" ><?php   echo $valName?></td>
+    <td  class="divRightContantOverTb"   valign="top" align="left" ><?php echo $valName?></td>
     <td  class="divRightContantOverTbR"  valign="top"  align="center">
     <table  border="0" cellspacing="0" cellpadding="0">
   <tr>
 
   <td valign="top" align="center" width="30">
   
-    <div class="divRightManage" id="divManageBoxAdd<?php   echo $valID?>" title="<?php   echo $langTxt["btn:add"]?>" <?php   if($recordCountBox>=1){?> style="display:none;"<?php   } ?> onclick="
-    addContactBox('../core/insertBox.php',<?php   echo $valID?>,'divManageBoxAdd<?php   echo $valID?>','divManageBoxDel<?php   echo $valID?>')
+    <div class="divRightManage" id="divManageBoxAdd<?php echo $valID?>" title="<?php echo $langTxt["btn:add"]?>" <?php if($recordCountBox>=1){?> style="display:none;"<?php }?> onclick="
+    addContactBox('../core/insertBox.php',<?php echo $valID?>,'divManageBoxAdd<?php echo $valID?>','divManageBoxDel<?php echo $valID?>')
     ">
     <img src="../img/btn/add2.png"  /><br/>
-    <span class="fontContantTbManage"><?php   echo $langTxt["btn:add"]?></span>    </div> 
+    <span class="fontContantTbManage"><?php echo $langTxt["btn:add"]?></span>    </div> 
     
-    <div class="divRightManage" id="divManageBoxDel<?php   echo $valID?>"  title="<?php   echo $langTxt["btn:del"]?>" <?php   if($recordCountBox<=0){?> style="display:none;"<?php   } ?> onClick="
-    delContactBox('../core/deleteHome.php',<?php   echo $valBoxID?>,'divManageBoxDel<?php   echo $valID?>','divManageBoxAdd<?php   echo $valID?>')
+    <div class="divRightManage" id="divManageBoxDel<?php echo $valID?>"  title="<?php echo $langTxt["btn:del"]?>" <?php if($recordCountBox<=0){?> style="display:none;"<?php }?> onClick="
+    delContactBox('../core/deleteHome.php',<?php echo $valBoxID?>,'divManageBoxDel<?php echo $valID?>','divManageBoxAdd<?php echo $valID?>')
             ">
      <img src="../img/btn/delete.png"  /><br/>
-    <span class="fontContantTbManage"><?php   echo $langTxt["btn:del"]?></span>    </div>
+    <span class="fontContantTbManage"><?php echo $langTxt["btn:del"]?></span>    </div>
        </td>
   
     
   </tr>
 </table>    </td>
   </tr>
-  <?php   } ?>
+  <?php }?>
 
-<?php   
+<?php 
 $index++;
 }
 	}else{?>
  <tr >
-    <td colspan="3" align="center"  valign="middle"  class="divRightContantTbRL" style="padding-top:150px; padding-bottom:150px;" ><?php   echo $langTxt["mg:nodate"]?></td>
+    <td colspan="3" align="center"  valign="middle"  class="divRightContantTbRL" style="padding-top:150px; padding-bottom:150px;" ><?php echo $langTxt["mg:nodate"]?></td>
     </tr>
-<?php   } ?>
+<?php }?>
 
 
 </table>
-<input name="TotalCheckBoxID" type="hidden" id="TotalCheckBoxID" value="<?php   echo $index-1?>" />
+<input name="TotalCheckBoxID" type="hidden" id="TotalCheckBoxID" value="<?php echo $index-1?>" />
 <div class="divRightContantEnd"></div>
                              </div>
                     
 </form>
-<?php   include("../lib/disconnect.php");?>
+<?php include("../lib/disconnect.php");?>
  </body>
 </html>

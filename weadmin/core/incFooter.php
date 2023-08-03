@@ -1,6 +1,6 @@
 <!-- <div class="footerBackOffice">
-    <div class="imgLogo"><?php   echo $langTxt["login:footecopy"] ?> <i class="versionsmall"><?php   echo 'Current PHP Version: ' . phpversion(); ?></i></div>
-    <div class="divLogin"><?php   echo $langTxt["login:footecontact"] ?></div>
+    <div class="imgLogo"><?php echo  $langTxt["login:footecopy"] ?> <i class="versionsmall"><?php echo 'Current PHP Version: ' . phpversion(); ?></i></div>
+    <div class="divLogin"><?php echo  $langTxt["login:footecontact"] ?></div>
 </div> -->
 
 <script type="text/javascript">
@@ -18,9 +18,9 @@
 
 <div class="footerBackOffice">
     <div>
-	    <div class="imgLogo"><?php   echo $langTxt["login:footecopy"]; ?> <i class="versionsmall"><?php   echo 'Current PHP Version: ' . phpversion(); ?></i></div>
-	    <div class="divLogin"><?php   echo $langTxt["login:footecontact"]; ?></div>
-	</div>
+        <div class="imgLogo"><?php echo $langTxt["login:footecopy"]; ?> <i class="versionsmall"><?php echo 'Current PHP Version: ' . phpversion(); ?></i></div>
+        <div class="divLogin"><?php echo $langTxt["login:footecontact"]; ?></div>
+    </div>
 </div>
 <style>
     .versionsmall {
@@ -30,4 +30,11 @@
 
 <div id="loadCheckComplete"></div>
 <div class="clearAll"></div>
-<?php   include("../lib/disconnect.php"); ?>
+<?php include("../lib/disconnect.php"); ?>
+
+<style type="text/css">
+    .fontContantTbTime a{
+        color: #999;
+    }
+    .fontContantTbTime a:hover{color: #2671c2;}
+</style>

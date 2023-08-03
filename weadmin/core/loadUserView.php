@@ -1,4 +1,4 @@
-<?php  
+<?php
 include("../lib/session.php");
 include("../lib/config.php");
 include("../lib/connect.php");
@@ -33,13 +33,13 @@ $valNav2=$langTxt["nav:userManage2"];
 		".$core_tb_staff."_lastdate , 
 		".$core_tb_staff."_crebyid, 
 		".$core_tb_staff."_status  , 
-		".$core_tb_staff."_unitid   , 
-		".$core_tb_staff."_typeuser   , 
-		".$core_tb_staff."_typeapprove  , 
-		".$core_tb_staff."_part    , 
-		".$core_tb_staff."_position  , 
-		".$core_tb_staff."_usertype
+		".$core_tb_staff."_other   , 
+		".$core_tb_staff."_other   , 
+		".$core_tb_staff."_other  , 
+		".$core_tb_staff."_other    , 
+		".$core_tb_staff."_position 
 		  FROM ".$core_tb_staff." WHERE ".$core_tb_staff."_id='".$_POST["valEditID"]."'";
+		  //print_pre($sql);
 			$Query=wewebQueryDB($coreLanguageSQL,$sql);
 			$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 			$valId=$Row[0];
@@ -70,7 +70,7 @@ $valNav2=$langTxt["nav:userManage2"];
 			$valTypeApproveShow=$coreTxtTypeApprove[$Row[22]];
 			$valPart=$Row[23];
 			$valPositionUser=$Row[24];
-		    $valUsertype=$Row[25];
+		      $valUsertype=$Row[25];
 			
 			 logs_access('2','View');
 ?>
@@ -82,7 +82,7 @@ $valNav2=$langTxt["nav:userManage2"];
 <meta name="googlebot" content="noindex, nofollow">
 <link href="../css/theme.css" rel="stylesheet"/>
 
-<title><?php   echo $core_name_title?></title>
+<title><?php echo $core_name_title?></title>
 <script language="JavaScript"  type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
 <script language="JavaScript" type="text/javascript">
 function executeSubmit() {
@@ -205,18 +205,18 @@ function loadCheckUser() {
 <body>
 <form action="?" method="get" name="myForm" id="myForm">
     <input name="execute" type="hidden" id="execute" value="update" />
-    <input name="masterkey" type="hidden" id="masterkey" value="<?php   echo $_REQUEST['masterkey']?>" />
-    <input name="menukeyid" type="hidden" id="menukeyid" value="<?php   echo $_REQUEST['menukeyid']?>" />
-    <input name="inputSearch" type="hidden" id="inputSearch" value="<?php   echo $_REQUEST['inputSearch']?>" />
-    <input name="module_pageshow" type="hidden" id="module_pageshow" value="<?php   echo $_REQUEST['module_pageshow']?>" />
-    <input name="module_pagesize" type="hidden" id="module_pagesize" value="<?php   echo $_REQUEST['module_pagesize']?>" />
-    <input name="module_orderby" type="hidden" id="module_orderby" value="<?php   echo $_REQUEST['module_orderby']?>" />
-    <input name="inputGh" type="hidden" id="inputGh" value="<?php   echo $_REQUEST['inputGh']?>" />
-    <input name="valEditID" type="hidden" id="valEditID" value="<?php   echo $_REQUEST['valEditID']?>" />
+    <input name="masterkey" type="hidden" id="masterkey" value="<?php echo $_REQUEST['masterkey']?>" />
+    <input name="menukeyid" type="hidden" id="menukeyid" value="<?php echo $_REQUEST['menukeyid']?>" />
+    <input name="inputSearch" type="hidden" id="inputSearch" value="<?php echo $_REQUEST['inputSearch']?>" />
+    <input name="module_pageshow" type="hidden" id="module_pageshow" value="<?php echo $_REQUEST['module_pageshow']?>" />
+    <input name="module_pagesize" type="hidden" id="module_pagesize" value="<?php echo $_REQUEST['module_pagesize']?>" />
+    <input name="module_orderby" type="hidden" id="module_orderby" value="<?php echo $_REQUEST['module_orderby']?>" />
+    <input name="inputGh" type="hidden" id="inputGh" value="<?php echo $_REQUEST['inputGh']?>" />
+    <input name="valEditID" type="hidden" id="valEditID" value="<?php echo $_REQUEST['valEditID']?>" />
 					<div class="divRightNav">
                         <table width="96%" border="0" cellspacing="0" cellpadding="0"  align="center" >
                         <tr>
-                        <td  class="divRightNavTb" align="left"  id="defTop" ><span class="fontContantTbNav"><a href="<?php   echo $valLinkNav1?>" target="_self"><?php   echo $valNav1?></a> <img src="../img/btn/nav.png" align="absmiddle" vspace="5" /> <?php   echo $langTxt["us:viewpermis"]?></span></td>
+                        <td  class="divRightNavTb" align="left"  id="defTop" ><span class="fontContantTbNav"><a href="<?php echo $valLinkNav1?>" target="_self"><?php echo $valNav1?></a> <img src="../img/btn/nav.png" align="absmiddle" vspace="5" /> <?php echo $langTxt["us:viewpermis"]?></span></td>
                         <td  class="divRightNavTb" align="right">
                         
 
@@ -228,13 +228,12 @@ function loadCheckUser() {
                             <div class="divRightHead">
                                 <table width="96%" border="0" cellspacing="0" cellpadding="0" class="borderBottom" align="center" >
                                   <tr>
-                                    <td height="77" align="left"><span class="fontHeadRight"><?php   echo $langTxt["us:viewpermis"]?></span></td>
+                                    <td height="77" align="left"><span class="fontHeadRight"><?php echo $langTxt["us:viewpermis"]?></span></td>
                                     <td align="left">
                                             <table  border="0" cellspacing="0" cellpadding="0" align="right">
                                                 <tr>
                                                     <td align="right">
-                                                        <div  class="btnEditView" title="<?php   echo $langTxt["btn:edit"]?>"  onclick="editContactNew('../core/editViewUs.php');"></div>
-                                                        <div  class="btnBack" title="<?php   echo $langTxt["btn:back"]?>" onclick="history.back();"></div>
+                                                        <div  class="btnEditView" title="<?php echo $langTxt["btn:edit"]?>"  onclick="editContactNew('../core/editViewUs.php');"></div>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -247,13 +246,13 @@ function loadCheckUser() {
     <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder "> 
   <tr >
     <td colspan="7" align="left"  valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-    <span class="formFontSubjectTxt"><?php   echo $langTxt["us:titleuser"]?></span><br/>
-    <span class="formFontTileTxt"><?php   echo $langTxt["us:titleuserDe"]?></span>    </td>
+    <span class="formFontSubjectTxt"><?php echo $langTxt["us:titleuser"]?></span><br/>
+    <span class="formFontTileTxt"><?php echo $langTxt["us:titleuserDe"]?></span>    </td>
     </tr>
-     <!-- <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:permission"]?>:</td>
+     <tr >
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:permission"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-     <div class="formDivView"><?php   
+     <div class="formDivView"><?php 
 	$sql_group = "SELECT ".$core_tb_group."_id,".$core_tb_group."_name  FROM ".$core_tb_group." WHERE ".$core_tb_group."_id='".$valGroupid."'   ORDER BY ".$core_tb_group."_order DESC ";
 		$query_group=wewebQueryDB($coreLanguageSQL,$sql_group);
 		$row_group=wewebFetchArrayDB($coreLanguageSQL,$query_group);
@@ -261,39 +260,31 @@ function loadCheckUser() {
 		$row_groupname=$row_group[1];
 		echo $row_groupname;
 		?></div>    </td>
-     </tr> -->
-  <tr  style="display:none;">
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php  echo $langTxt["txt:typeuser"]?>:<span class="fontContantAlert"></span></td>
-    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-    <div class="formDivView">
-        <?php  
-        echo $arrTypeUser[$valUsertype];
-        ?>
-    </div></td>
-  </tr>
-        <tr style="display:none;" >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:part"]?>:</td>
-    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-    <div class="formDivView"><?php   echo $valPart?></div></td>
-  </tr>
+     </tr>
+      
+        
   <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:nameuser"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:nameuser"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-    <div class="formDivView"><?php   echo $valUsername?></div></td>
+    <div class="formDivView"><?php echo $valUsername?></div></td>
   </tr>
-    <tr <?php   if($valUsertype== 2){ ?> style="display:none;" <?php   } ?> >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:pass"]?>:</td>
+    <tr <?php  if($valUsertype == 2){ ?> style="display:none;" <?php  }?> >
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:pass"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-    <div class="formDivView"><?php   echo $valPassword?></div></td>
+    <div class="formDivView"><?php echo $valPassword?></div></td>
   </tr>
+        <tr>
+      <td colspan="7" align="right"  valign="top">&nbsp;</td>
+      </tr>
+
     </table>
-    <br <?php   if($valUsertype== 2){ ?> style="display:none;" <?php   } ?> />
-    <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder " <?php   if($valUsertype== 2){ ?> style="display:none;" <?php   } ?> > 
+    <br <?php  if($valUsertype == 2){ ?> style="display:none;" <?php  }?> />
+    <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder " <?php  if($valUsertype == 2){ ?> style="display:none;" <?php  }?> > 
 
     <tr >
     <td colspan="7" align="left"  valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-    <span class="formFontSubjectTxt"><?php   echo $langTxt["us:titlepic"]?></span><br/>
-    <span class="formFontTileTxt"><?php   echo $langTxt["us:titlepicDe"]?></span>    </td>
+    <span class="formFontSubjectTxt"><?php echo $langTxt["us:titlepic"]?></span><br/>
+    <span class="formFontTileTxt"><?php echo $langTxt["us:titlepicDe"]?></span>    </td>
     </tr>
         <tr >
           <td   colspan="7"  align="right" height="15"  valign="top"  ></td>
@@ -302,101 +293,115 @@ function loadCheckUser() {
     <td  align="right"  valign="top"  height="5"  width="18%"  >&nbsp;</td>
     <td colspan="6" align="left"  valign="top" >
         <div style="margin-bottom:10px;"  name="imgShow"  id="imgShow">
-        <img src="../../upload/core/50/<?php   echo $valPic?>"   onerror="this.src='<?php   echo "../img/btn/nouser.jpg"?>'" />
-            <input name="picnameProfile" type="hidden" id="picnameProfile" value="<?php   echo $valPic?>" />
+        <img src="../../upload/core/50/<?php echo $valPic?>"   onerror="this.src='<?php echo "../img/btn/nouser.jpg"?>'" />
+            <input name="picnameProfile" type="hidden" id="picnameProfile" value="<?php echo $valPic?>" />
         </div>    </td>
   </tr>
+        <tr>
+      <td colspan="7" align="right"  valign="top">&nbsp;</td>
+      </tr>
+
       </table>
-    <br <?php   if($valUsertype== 2){ ?> style="display:none;" <?php   } ?> />
-    <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder " <?php   if($valUsertype== 2){ ?> style="display:none;" <?php   } ?> > 
+    <br <?php  if($valUsertype == 2){ ?> style="display:none;" <?php  }?>  />
+    <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder " <?php  if($valUsertype == 2){ ?> style="display:none;" <?php  }?> > 
 
   <tr >
     <td colspan="7" align="left"  valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-    <span class="formFontSubjectTxt"><?php   echo $langTxt["us:titlesystem"]?></span><br/>
-    <span class="formFontTileTxt"><?php   echo $langTxt["us:titlesystemDe"]?></span>   </td>
+    <span class="formFontSubjectTxt"><?php echo $langTxt["us:titlesystem"]?></span><br/>
+    <span class="formFontTileTxt"><?php echo $langTxt["us:titlesystemDe"]?></span>   </td>
     </tr>
   <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:antecedent"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:antecedent"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-     <div class="formDivView"><?php   if ($valPrefix=="Mr."){ echo $langTxt["us:mr"]; }else if ($valPrefix=="Miss"){ echo $langTxt["us:miss"]; }else if ($valPrefix=="Mrs."){ echo $langTxt["us:mrs"]; } ?></div>        </td>
+     <div class="formDivView"><?php if ($valPrefix=="Mr."){ echo $langTxt["us:mr"]; }else if ($valPrefix=="Miss"){ echo $langTxt["us:miss"]; }else if ($valPrefix=="Mrs."){ echo $langTxt["us:mrs"]; }?></div>        </td>
   </tr>
   <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:sex"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:sex"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-         <div class="formDivView"><?php   if ($valGender=="Male"){ echo $langTxt["us:male"]; }else if ($valGender=="Female"){ echo $langTxt["us:female"]; } ?></div>        </td>
+         <div class="formDivView"><?php if ($valGender=="Male"){ echo $langTxt["us:male"]; }else if ($valGender=="Female"){ echo $langTxt["us:female"]; }?></div>        </td>
   </tr>
       <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:firstnamet"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:firstnamet"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-    <div class="formDivView"><?php   echo $valFnamethai?></div></td>
+    <div class="formDivView"><?php echo $valFnamethai?></div></td>
   </tr>
     <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:lastnamet"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:lastnamet"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-    <div class="formDivView"><?php   echo $valLnamethai?></div></td>
+    <div class="formDivView"><?php echo $valLnamethai?></div></td>
   </tr>
     <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:firstnamete"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:firstnamete"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-    <div class="formDivView"><?php   echo $valFnameeng?></div></td>
+    <div class="formDivView"><?php echo $valFnameeng?></div></td>
   </tr>
     <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:lastnamee"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:lastnamee"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-    <div class="formDivView"><?php   echo $valLnameeng?></div></td>
+    <div class="formDivView"><?php echo $valLnameeng?></div></td>
   </tr>
-    <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:email"]?>:</td>
+  
+   <tr >
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["set:position"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-    <div class="formDivView"><?php   echo $valEmail?></div></td>
+    <div class="formDivView"><?php echo $valPositionUser?></div></td>
+  </tr>  
+    <tr >
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:email"]?>:</td>
+    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
+    <div class="formDivView"><?php echo $valEmail?></div></td>
   </tr>
     
     <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:address"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:address"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-     <div class="formDivView"><?php   echo $valAddress?></div> </td>
+     <div class="formDivView"><?php echo $valAddress?></div> </td>
   </tr>
     <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:tel"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:tel"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-    <div class="formDivView"><?php   echo $valTelephone?></div></td>
+    <div class="formDivView"><?php echo $valTelephone?></div></td>
   </tr>
     <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:mobile"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:mobile"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-    <div class="formDivView"><?php   echo $valMobile?></div></td>
+    <div class="formDivView"><?php echo $valMobile?></div></td>
   </tr>
   <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:other"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:other"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-    <div class="formDivView"><?php   echo $valOther?></div></td>
+    <div class="formDivView"><?php echo $valOther?></div></td>
   </tr>
+        <tr>
+      <td colspan="7" align="right"  valign="top">&nbsp;</td>
+      </tr>
+
        </table>
     <br />
     <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder "> 
 
 <tr >
     <td colspan="7" align="left"  valign="middle" class="formTileTxt tbBoxViewBorderBottom">
-    <span class="formFontSubjectTxt"><?php   echo $langTxt["us:titleinfo"]?></span><br/>
-    <span class="formFontTileTxt"><?php   echo $langTxt["us:titleinfoDe"]?></span>    </td>
+    <span class="formFontSubjectTxt"><?php echo $langTxt["us:titleinfo"]?></span><br/>
+    <span class="formFontTileTxt"><?php echo $langTxt["us:titleinfoDe"]?></span>    </td>
     </tr>
   <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:credate"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:credate"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-     <div class="formDivView"><?php   echo $valCredate?></div>
+     <div class="formDivView"><?php echo $valCredate?></div>
         </td>
   </tr>
     <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:lastdate"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:lastdate"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-     <div class="formDivView"><?php   echo $valLastdate?></div>
+     <div class="formDivView"><?php echo $valLastdate?></div>
         </td>
   </tr>
     <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["us:creby"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:creby"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
      <div class="formDivView">
-     <?php  
+     <?php
 		if($_SESSION[$valSiteManage.'core_session_language']=="Thai"){
 			echo getUserThai($valCreby);
 		}else if($_SESSION[$valSiteManage.'core_session_language']=="Eng"){
@@ -409,11 +414,15 @@ function loadCheckUser() {
         </td>
   </tr>
     <tr >
-    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php   echo $langTxt["mg:status"]?>:</td>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["mg:status"]?>:</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
-     <div class="formDivView"><?php   echo $valStatus?></div>
+     <div class="formDivView"><?php echo $valStatus?></div>
         </td>
   </tr>
+        <tr>
+      <td colspan="7" align="right"  valign="top">&nbsp;</td>
+      </tr>
+
       </table>
     <br />
     <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" > 
@@ -422,11 +431,11 @@ function loadCheckUser() {
       <td colspan="7" align="right"  valign="top" height="20"></td>
       </tr>
     <tr >
-    <td colspan="7" align="right"  valign="middle" class="formEndContantTb"><a href="#defTop" title="<?php   echo $langTxt["btn:gototop"]?>"><?php   echo $langTxt["btn:gototop"]?> <img src="../img/btn/top.png"  align="absmiddle"/></a></td>
+    <td colspan="7" align="right"  valign="middle" class="formEndContantTb"><a href="#defTop" title="<?php echo $langTxt["btn:gototop"]?>"><?php echo $langTxt["btn:gototop"]?> <img src="../img/btn/top.png"  align="absmiddle"/></a></td>
     </tr>
   </table>
   </div>
 </form> 
-<?php   include("../lib/disconnect.php");?>
+<?php include("../lib/disconnect.php");?>
 </body>
 </html>

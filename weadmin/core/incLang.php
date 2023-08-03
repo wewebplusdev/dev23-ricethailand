@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langTxt["nav:setting"] = "Setting System";
@@ -17,7 +17,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langTxt["login:price"] = "Save cost";
     $langTxt["login:priceDe"] = "You can change the information on the website itself. The user does not have to cost more in the long run. Whether it is the design of the meat. Add the meat to the site etc.";
     $langTxt["login:alert"] = "You enter your user name / password is incorrect.";
-    $langTxt["login:footecopy"] = "&copy; 2023 WEWEBPLUS";
+    $langTxt["login:footecopy"] = "&copy; 2015 WEWEBPLUS";
     $langTxt["login:footecontact"] = "Email: support@wewebplus.com Tel.: 02-570-1266, 086-920-7736";
 
     $langTxt["menu:logout"] = "Log out";
@@ -197,7 +197,9 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langTxt["txt:picDe"] = "The image logo, for use in the picture display of content";
     $langTxt["inp:album"] ="Select image";
     $langTxt["inp:notepic"] ="หมายเหตุ : กรุณาอัพโหลดเฉพาะไฟล์ .jpg, .png และ .gif เท่านั้น, ขนาดของรูปภาพไม่เกิน 2 Mb และรูปภาพที่ให้ในการอัพโหลดควรมีสัดส่วนที่ 150x150 พิกเซล";
-    $langTxt["nav:setting:minisite"] = "Setting System Minisite";
+    
+    $langMod["set:lang:web"] = "Show Content on website";
+    $langMod["set:lang:web:alert"] = 'Please check "Show Content on website"';
 
 } else {
     $langTxt["nav:setting"] = "ตั้งค่าระบบ";
@@ -219,29 +221,17 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langTxt["login:price"] = "ประหยัดค่าใช้จ่าย";
     $langTxt["login:priceDe"] = "คุณสามารถเปลี่ยนข้อมูลบนเว็บไซตเองได้ โดยใช้ไม่ต้องมีค่าใช้จ่ายเพิ่มเติมในระยะยาว ไม่ว่าจะเป็นค่าออกแบบเนื้อ ค่าเพิ่มเนื้อในเว็บไซต์ ฯลฯ";
     $langTxt["login:alert"] = "คุณกรอกชื่อผู้ใช้งาน/รหัสผ่านไม่ถูกต้อง";
-    $langTxt["regis:alert"] = "เกิดข้อผิดพลาดระหว่างลงทะเบียน";
-    $langTxt["regis:alertForget"] = "เกิดข้อผิดพลาดระหว่างดำเนินการ";
-    $langTxt["regis:alertRecap"] = "กรุณากดยืนยัน reCaptcha";
-    $langTxt["login:footecopy"] = "&copy; 2023 WEWEBPLUS";
-    $langTxt["login:footecontact"] = "Email: support@wewebplus.com Tel.: 02-570-1266, 086-920-7736";
+    $langTxt["login:footecopy"] = "ที่ตั้ง : 42/5, ซอย พาสนา 2, พระโขนงเหนือ, วัฒนา, กรุงเทพมหานคร 10110<br/>Tel : +66 (0) 2 381 1425 Fax : -";
+    $langTxt["login:footecontact"] = "Copyright &copy;2022 Thermomix Thailand All rights reserved.";
 
     $langTxt["menu:logout"] = "ออกจากระบบ";
     $langTxt["menu:topmenu"] = "เมนูผู้ใช้งานระบบ";
-
-    $langTxt["us:agency"] = "หน่วยงาน";
-    $langTxt["us:titleagency"] = "ข้อมูล".$langTxt["us:agency"];
-    $langTxt["us:selectagency"] = "เลือก".$langTxt["us:agency"];
-    $langTxt["us:titleagencyDe"] = "โปรดป้อน".$langTxt["us:agency"]." เพื่อใช้ในการควบคุมผู้ใช้งานระบบในการจัดการเว็บไซต์ของคุณ";
-    $langTxt["regis:btn"] = "สมัครสมาชิก";
-    $langTxt["regis:btnnext"] = "ถัดไป";
-    $langTxt["regis:btnback"] = "ย้อนกลับ";
-    $langTxt["regis:btnsubmit"] = "ยืนยัน";
-
 
 
     $langTxt["mg:subject"] = "ชื่อเมนู";
     $langTxt["mg:type"] = "ประเภท";
     $langTxt["mg:status"] = "สถานะ";
+    $langTxt["mg:filetype"] = "ประเภทไฟล์";
     $langTxt["mg:manage"] = "จัดการ";
     $langTxt["mg:nodate"] = "ไม่พบข้อมูล";
     $langTxt["mg:crepermis"] = "สร้างเมนูการใช้งานระบบใหม่";
@@ -332,7 +322,7 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langTxt["us:lastnamet"] = "นามสกุล ภาษาไทย";
     $langTxt["us:firstnamete"] = "ชื่อ อังกฤษ	";
     $langTxt["us:lastnamee"] = "นามสกุล อังกฤษ";
-    $langTxt["us:email"] = "อีเมล";
+    $langTxt["us:email"] = "อีเมล์";
     $langTxt["us:address"] = "ที่อยู่ ";
     $langTxt["us:tel"] = "เบอร์โทรศัพท์ ";
     $langTxt["us:mobile"] = "เบอร์โทรศัพท์มือถือ";
@@ -394,7 +384,6 @@ if ($_SESSION[$valSiteManage . "core_session_language"] == "Eng") {
     $langTxt["btn:del"] = "ลบ";
     $langTxt["btn:copy"] = "คัดลอก";
     $langTxt["btn:edit"] = "แก้ไข";
-    $langTxt["btn:log"] = "Log";
     $langTxt["btn:top"] = "Top";
     $langTxt["btn:save"] = "บันทึก";
     $langTxt["btn:sortting"] = "จัดเรียง";
@@ -473,15 +462,20 @@ $langTxt["us:unitMain"] = "หน่วยงานหลัก";
 
 $langTxt["us:selectUnitSub"] = "เลือกหน่วยงานย่อย";
 $langTxt["us:unitSub"] = "หน่วยงานย่อย";
-$langTxt["txt:subjectlog"] = "ประวัติการอนุมัติข่าวประชาสัมพันธ์";
-$langTxt["txt:subjectlogDe"] = "ข้อมูลนี้คือส่วนที่ใช้ในการแสดง".$langTxt["txt:subjectlog"]." เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
 
-$langTxt["txt:nameAp"] = "ผู้อัพเดท";
-$langTxt["txt:dateAp"] = "วันที่อัพเดท";
-$langTxt["txt:status"] = "สถานะ";
 
-$langTxt["note:password"] = "หมายเหตุ: รหัสผ่านจะต้องมีจำนวนตัวอักษร 8 ตัวขึ้นไป ประกอบไปด้วย อักษรพิมพ์ใหญ่ พิมพ์เล็ก และตัวเลข";
-$langTxt["note:usernamenoti"] = "หมายเหตุ: ชื่อผู้ใช้ต้องมีจำนวนตัวอักษร A-Z,  a-z, . และ 0-9 เท่านั้น";
-$langTxt["note:emailalert"] = "หมายเหตุ: อีเมลนี้อยู่ในระบบแล้ว กรุณาลองใหม่อีกครั้ง";
-$langTxt["nav:setting:minisite"] = "ตั้งค่าระบบย่อย";
+$langMod["set:lang:web"] = "แสดงเนื้อหาบนเว็บไซต์";
+$langMod["set:lang:web:alert"] = 'โปรดตรวจสอบ "แสดงเนื้อหาบนเว็บไซต์"';
+$langMod["tit:hashtag"] = "ข้อมูลแท็กเชื่อมโยงธีม";
+$langMod["tit:hashtagDes"] = "ข้อมูลนี้คือส่วนที่ใช้ในการกำหนดแท็กเชื่อมโยงในการแสดงผลส่วนนี้ เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
+$langMod["inp:hashtag"] = "แท็กเชื่อมโยงธีม";
+$langMod["tit:selectghasg"] = "เลือก".$langMod["inp:hashtag"];
+
+$langMod["tit:theme"] = "ข้อมูลธีมเว็บไซต์";
+$langMod["tit:themeDe"] = "ข้อมูลนี้คือส่วนที่ใช้ในการกำหนดธีมเว็บไซต์ เพื่อใช้ในการแสดงผลในหน้าเว็บไซต์ของคุณ";
+$langMod["inp:theme"] = "ธีมเว็บไซต์";
+$langMod["tit:selectgtheme"] = "เลือก".$langMod["inp:theme"];
+$langTxt["mg:inpiconclass"] = "ชื่อคลาส";
+$langTxt["login:alertAD"] = "ไม่สามารถติดต่อ server มหาลัยเพื่อตรวจสอบรหัสผ่านได้";
 }
+?>

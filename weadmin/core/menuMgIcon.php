@@ -1,4 +1,4 @@
-<?php  
+<?php
 include("../lib/session.php");
 include("../lib/config.php");
 ?>
@@ -9,8 +9,8 @@ include("../lib/config.php");
         <meta name="robots" content="noindex, nofollow">
             <meta name="googlebot" content="noindex, nofollow">
                 <link href="../css/theme.css" rel="stylesheet"/>
-                <title><?php   echo  $core_name_title ?></title>
-                <script language="JavaScript"  type="text/javascript" src="../js/jquery-3.7.0.min.js"></script>
+                <title><?php echo  $core_name_title ?></title>
+                <script language="JavaScript"  type="text/javascript" src="../js/jquery-1.9.0.js"></script>
                 <script language="JavaScript"  type="text/javascript" src="../js/jquery.blockUI.js"></script>
                 <script language="JavaScript"  type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
                 </head>
@@ -28,11 +28,11 @@ include("../lib/config.php");
                                                     <td > <table border="0" cellpadding="0" cellspacing="1" class="table_border">
                                                             <form action="/?" method="post" name="myForm" id="myForm">
                                                                 <tr align="center"> 
-                                                                    <?php   for ($i = 1; $i <= $core_icon_columnsize; $i++) { ?>
+                                                                    <?php for ($i = 1; $i <= $core_icon_columnsize; $i++) { ?>
                                                                         <td height="22" class="table_header">&nbsp;</td>
-                                                                    <?php   } ?>
+                                                                    <?php } ?>
                                                                 </tr>
-                                                                <?php  
+                                                                <?php
 // Get Files
                                                                 $colCount = 0;
                                                                 $handle = opendir($core_icon_librarypath);
@@ -47,7 +47,7 @@ include("../lib/config.php");
                                                                                     if ($colCount == 0) {
                                                                                         ?>
                                                                                         <tr> 
-                                                                                            <?php  
+                                                                                            <?php
                                                                                         }
                                                                                         if ($myClassName == "table_row1") {
                                                                                             $myClassName = "table_row2";
@@ -56,13 +56,13 @@ include("../lib/config.php");
                                                                                         }
                                                                                         $colCount++;
                                                                                         ?>
-                                                                                        <td width="30" height="30" align="center" class="<?php   echo  $myClassName ?>"><img src="<?php   echo  $core_icon_librarypath ?>/<?php   echo  $file ?>" onMouseOver="this.style.cursor = 'hand'" onClick="setImageSelected('<?php   echo  $core_icon_librarypath . "/" . $file ?>')"></td>
-                                                                                    <?php  
+                                                                                        <td width="30" height="30" align="center" class="<?php echo  $myClassName ?>"><img src="<?php echo  $core_icon_librarypath ?>/<?php echo  $file ?>" onMouseOver="this.style.cursor = 'hand'" onClick="setImageSelected('<?php echo  $core_icon_librarypath . "/" . $file ?>')"></td>
+                                                                                    <?php
                                                                                     if ($colCount == $core_icon_columnsize) {
                                                                                         $colCount = 0;
                                                                                         ?>
                                                                                         </tr>
-                                                                                        <?php  
+                                                                                        <?php
                                                                                     }
                                                                                 }
                                                                             }
@@ -81,7 +81,7 @@ include("../lib/config.php");
                                                                         ?>
                                                                     </form>
                                                                     <td width="30" height="30" align="center" class="table_row2">&nbsp;</td>
-        <?php  
+        <?php
     }
 }
 ?>

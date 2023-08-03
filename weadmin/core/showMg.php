@@ -1,4 +1,4 @@
-<?php  
+<?php
 @include("../lib/session.php");
 include("../lib/config.php");
 include("../lib/connect.php");
@@ -23,15 +23,15 @@ $sql = "UPDATE " . $tablename . " SET "
         . $tablename . "_hidden= '$inputstatusname'  WHERE " . $tablename . "_id='" . $statusid . "'";
 $Query = wewebQueryDB($coreLanguageSQL, $sql);
 ?>
-<?php   if ($inputstatusname == "Show") { ?>
-    <a href="javascript:void(0)"  onclick="changeStatusShow('<?php   echo  $loaddder ?>', '<?php   echo  $tablename ?>', '<?php   echo  $inputstatusname ?>', '<?php   echo  $statusid ?>', '<?php   echo  $loadderstatus ?>', '<?php   echo  $filestatus ?>')" ><span class="fontContantTbEnable"><?php   echo  $inputstatusname ?></span></a>
+<?php if ($inputstatusname == "Show") { ?>
+    <a href="javascript:void(0)"  onclick="changeStatusShow('<?php echo  $loaddder ?>', '<?php echo  $tablename ?>', '<?php echo  $inputstatusname ?>', '<?php echo  $statusid ?>', '<?php echo  $loadderstatus ?>', '<?php echo  $filestatus ?>')" ><span class="fontContantTbEnable"><?php echo  $inputstatusname ?></span></a>
 
 
 
-<?php   } else { ?>
-    <a href="javascript:void(0)"  onclick="changeStatusShow('<?php   echo  $loaddder ?>', '<?php   echo  $tablename ?>', '<?php   echo  $inputstatusname ?>', '<?php   echo  $statusid ?>', '<?php   echo  $loadderstatus ?>', '<?php   echo  $filestatus ?>')" ><span class="fontContantTbDisable"><?php   echo  $inputstatusname ?></span></a>
+<?php } else { ?>
+    <a href="javascript:void(0)"  onclick="changeStatusShow('<?php echo  $loaddder ?>', '<?php echo  $tablename ?>', '<?php echo  $inputstatusname ?>', '<?php echo  $statusid ?>', '<?php echo  $loadderstatus ?>', '<?php echo  $filestatus ?>')" ><span class="fontContantTbDisable"><?php echo  $inputstatusname ?></span></a>
 
 
-<?php   } ?>
+<?php } ?>
 
-<img src="../img/loader/ajax-loaderstatus.gif" alt="waiting"  style="display:none;"  id="<?php   echo  $loaddder ?>" />
+<img src="../img/loader/ajax-loaderstatus.gif" alt="waiting"  style="display:none;"  id="<?php echo  $loaddder ?>" />

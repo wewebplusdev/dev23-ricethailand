@@ -73,38 +73,8 @@ function isNumber(myObj) {
 // ####################################### End Setting ################################################# //
 // ####################################### Start Login ################################################# //
 
-// function checkLoginUser() {
+function checkLoginUser() {
 
-//     jQuery.blockUI({
-//         message: jQuery('#tallContent'),
-//         css: {
-//             border: 'none',
-//             padding: '35px',
-//             backgroundColor: '#000',
-//             '-webkit-border-radius': '10px',
-//             '-moz-border-radius': '10px',
-//             opacity: .9,
-//             color: '#fff'
-//         }
-//     });
-
-//     var TYPE = "POST";
-//     var URL = "core/login.php";
-
-//     var dataSet = jQuery("#myFormLogin").serialize();
-//     jQuery.ajax({
-//         type: TYPE,
-//         url: URL,
-//         data: dataSet,
-//         success: function(html) {
-//             jQuery("#loadCheckComplete").show();
-//             jQuery("#loadCheckComplete").html(html);
-//             setTimeout(jQuery.unblockUI, 200);
-//         }
-//     });
-// }
-
-function checkLogoutUser() {
     jQuery.blockUI({
         message: jQuery('#tallContent'),
         css: {
@@ -116,11 +86,42 @@ function checkLogoutUser() {
             opacity: .9,
             color: '#fff'
         }
-        
+    });
+
+    var TYPE = "POST";
+    var URL = "core/login.php";
+
+    var dataSet = jQuery("#myFormLogin").serialize();
+    jQuery.ajax({
+        type: TYPE,
+        url: URL,
+        data: dataSet,
+        success: function(html) {
+            jQuery("#loadCheckComplete").show();
+            jQuery("#loadCheckComplete").html(html);
+            setTimeout(jQuery.unblockUI, 200);
+        }
+    });
+}
+
+function checkLogoutUser() {
+
+    jQuery.blockUI({
+        message: jQuery('#tallContent'),
+        css: {
+            border: 'none',
+            padding: '35px',
+            backgroundColor: '#000',
+            '-webkit-border-radius': '10px',
+            '-moz-border-radius': '10px',
+            opacity: .9,
+            color: '#fff'
+        }
     });
 
     var TYPE = "POST";
     var URL = "../core/logout.php";
+
     var dataSet = {};
     jQuery.ajax({
         type: TYPE,
@@ -228,7 +229,15 @@ function insertContactNew(fileAc) {
     var TYPE = "POST";
     var URL = fileAc;
 
+    var hour = jQuery("#myForm").find('#sHourInput option:disabled').removeAttr('disabled');
+    var min = jQuery("#myForm").find('#sMinInput option:disabled').removeAttr('disabled');
     var dataSet = jQuery("#myForm").serialize();
+    hour.attr('disabled', 'disabled');
+    min.attr('disabled', 'disabled');
+    // console.log("sHourInput = " + hour.attr());
+    // console.log("sMinInput = " + min.attr());
+    // console.log(dataSet);
+    // return false;
 
     jQuery.ajax({
         type: TYPE,
@@ -296,6 +305,30 @@ function loadDownloadSelectGroup(gID, masterkey, tID) {
     });
 }
 
+function loadWeblinkSelectMl(gID, masterkey, tID) {
+    //alert('test');
+    jQuery("#loadWaitingCategory").show();
+
+    var TYPE = "POST";
+    var URL = "../mod_weblink_minipro/load_selectType.php";
+    var dataSet = {
+        gID: gID,
+        masterkey: masterkey,
+        tID: tID
+    };
+
+    jQuery.ajax({
+        type: TYPE,
+        url: URL,
+        data: dataSet,
+        success: function(html) {
+
+            jQuery("#loadLevelTypeID").show();
+            jQuery("#loadLevelTypeID").html(html)
+            jQuery("#loadWaitingCategory").hide();
+        }
+    });
+}
 
 
 
@@ -318,7 +351,15 @@ function updateContactNew(fileAc) {
     var TYPE = "POST";
     var URL = fileAc;
 
+    var hour = jQuery("#myForm").find('#sHourInput option:disabled').removeAttr('disabled');
+    var min = jQuery("#myForm").find('#sMinInput option:disabled').removeAttr('disabled');
     var dataSet = jQuery("#myForm").serialize();
+    hour.attr('disabled', 'disabled');
+    min.attr('disabled', 'disabled');
+    // console.log("sHourInput = " + hour.attr());
+    // console.log("sMinInput = " + min.attr());
+    // console.log(dataSet);
+    // return false;
 
     jQuery.ajax({
         type: TYPE,
@@ -471,67 +512,7 @@ function changeStatus(loaddder, tablename, statusname, statusid, loadderstatus, 
         }
     });
 }
-
-function changeStatusClass(loaddder, tablename, statusname, statusid, loadderstatus, fileAc) {
-
-    jQuery("." + loaddder + "").show();
-
-    var TYPE = "POST";
-    var URL = fileAc;
-    var dataSet = {
-        Valueloaddder: loaddder,
-        Valuetablename: tablename,
-        Valuestatusname: statusname,
-        Valuestatusid: statusid,
-        Valueloadderstatus: loadderstatus,
-        Valuefilestatus: fileAc
-    };
-
-
-    jQuery.ajax({
-        type: TYPE,
-        url: URL,
-        data: dataSet,
-        success: function(html) {
-
-            jQuery("." + loadderstatus + "").show();
-            jQuery("." + loadderstatus + "").html(html);
-            jQuery("." + loaddder + "").hide();
-        }
-    });
-}
-
-
-function changeStatusOne(loaddder, tablename, statusname, statusid, loadderstatus, fileAc) {
-
-    jQuery("#" + loaddder + "").show();
-
-    var TYPE = "POST";
-    var URL = fileAc;
-    var dataSet = {
-        Valueloaddder: loaddder,
-        Valuetablename: tablename,
-        Valuestatusname: statusname,
-        Valuestatusid: statusid,
-        Valueloadderstatus: loadderstatus,
-        Valuefilestatus: fileAc
-    };
-
-
-    jQuery.ajax({
-        type: TYPE,
-        url: URL,
-        data: dataSet,
-        success: function(html) {
-            jQuery("#" + loadderstatus + "").show();
-            jQuery("#" + loadderstatus + "").html(html);
-            jQuery("#" + loaddder + "").hide();
-            location.reload();
-        }
-    });
-}
-
-function changeStatus2(loaddder, tablename, statusname, statusid, loadderstatus, fileAc, mid) {
+function changeStatusMasterkey(loaddder, tablename, statusname, statusid, loadderstatus, fileAc, masterkey) {
 
     jQuery("#" + loaddder + "").show();
 
@@ -544,37 +525,7 @@ function changeStatus2(loaddder, tablename, statusname, statusid, loadderstatus,
         Valuestatusid: statusid,
         Valueloadderstatus: loadderstatus,
         Valuefilestatus: fileAc,
-        ValueMid: mid
-    };
-
-
-    jQuery.ajax({
-        type: TYPE,
-        url: URL,
-        data: dataSet,
-        success: function(html) {
-
-            jQuery("#" + loadderstatus + "").show();
-            jQuery("#" + loadderstatus + "").html(html);
-            jQuery("#" + loaddder + "").hide();
-        }
-    });
-}
-
-function changeStatusHome(loaddder, tablename, statusname, statusid, loadderstatus, fileAc, MasterkeyVal) {
-
-    jQuery("#" + loaddder + "").show();
-
-    var TYPE = "POST";
-    var URL = fileAc;
-    var dataSet = {
-        Valueloaddder: loaddder,
-        Valuetablename: tablename,
-        Valuestatusname: statusname,
-        Valuestatusid: statusid,
-        Valueloadderstatus: loadderstatus,
-        Valuefilestatus: fileAc,
-        ValMasterkey: MasterkeyVal
+        Valuemasterkey: masterkey
     };
 
 
@@ -651,89 +602,6 @@ function btnBackPage(fileAc) {
     document.myFormHome.action = fileAc;
     document.myFormHome.submit();
 }
-
-function btnBackPage_gsub(fileAc) {
-	document.myFormHome.inputSearch.value = "";	
-	document.myFormHome.module_pageshow.value = "";	
-	document.myFormHome.module_pagesize.value = "";	
-	document.myFormHome.module_orderby.value = "";	
-	document.myFormHome.valEditID.value = "";	
-	document.myFormHome.inputLt.value = "";	
-	document.myFormHome.inputTh.value = "";	
-	
-	document.myFormHome.inputAreaResHome.value = "";	
-	document.myFormHome.inputResHome.value = "";	
-	
-    document.myFormHome.action = fileAc;
-    document.myFormHome.submit();
-}
-
-function btnBackPageRes(fileAc) {
-	document.myFormHome.inputSearch.value = "";	
-	document.myFormHome.module_pageshow.value = "";	
-	document.myFormHome.module_pagesize.value = "";	
-	document.myFormHome.module_orderby.value = "";	
-	document.myFormHome.inputTypeArea.value = "";	
-	document.myFormHome.valEditID.value = "";	
-	document.myFormHome.inputLt.value = "";	
-	document.myFormHome.inputTh.value = "";	
-	document.myFormHome.inputResHome.value = "";	
-	document.myFormHome.inputAreaResHome.value = "";	
-	document.myFormHome.action = fileAc;
-	document.myFormHome.submit();
-}
-
-function btnBackPageSea(fileAc) {
-	document.myFormHome.inputSearch.value = "";	
-	document.myFormHome.module_pageshow.value = "";	
-	document.myFormHome.module_pagesize.value = "";	
-	document.myFormHome.module_orderby.value = "";	
-	document.myFormHome.valEditID.value = "";	
-	document.myFormHome.inputLt.value = "";	
-	document.myFormHome.inputTh.value = "";	
-	document.myFormHome.inputSCID.value = "";	
-	document.myFormHome.action = fileAc;
-	document.myFormHome.submit();
-}
-
-
-function btnBackPageResUnit(fileAc) {
-	document.myFormHome.inputDID.value = "";	
-	document.myFormHome.inputSDID.value = "";	
-	document.myFormHome.inputAreaHome.value = "";	
-	document.myFormHome.inputSearch.value = "";	
-	document.myFormHome.module_pageshow.value = "";	
-	document.myFormHome.module_pagesize.value = "";	
-	document.myFormHome.module_orderby.value = "";	
-	document.myFormHome.action = fileAc;
-	document.myFormHome.submit();
-}
-
-function btnBackPageDmcrUnit(fileAc) {
-	document.myFormHome.inputDID.value = "";	
-	document.myFormHome.inputSDID.value = "";	
-	document.myFormHome.inputAreaHome.value = "";	
-	document.myFormHome.inputSearch.value = "";	
-	document.myFormHome.module_pageshow.value = "";	
-	document.myFormHome.module_pagesize.value = "";	
-	document.myFormHome.module_orderby.value = "";	
-	document.myFormHome.action = fileAc;
-	document.myFormHome.submit();
-}
-
-function btnBackPageProvUnit(fileAc) {
-	document.myFormHome.inputAreaHome.value = "";	
-	document.myFormHome.inputDID.value = "";	
-	document.myFormHome.inputSDID.value = "";	
-	document.myFormHome.inputTypeArea.value = "";	
-	document.myFormHome.inputSearch.value = "";	
-	document.myFormHome.module_pageshow.value = "";	
-	document.myFormHome.module_pagesize.value = "";	
-	document.myFormHome.module_orderby.value = "";	
-	document.myFormHome.action = fileAc;
-	document.myFormHome.submit();
-}
-
 
 
 function checkUsermember(username) {
@@ -1263,76 +1131,6 @@ function delPicUpload2(fileAc) {
     });
 }
 
-
-function delIconUpload(fileAc) {
-
-    jQuery.blockUI({
-        message: jQuery('#tallContent'),
-        css: {
-            border: 'none',
-            padding: '35px',
-            backgroundColor: '#000',
-            '-webkit-border-radius': '10px',
-            '-moz-border-radius': '10px',
-            opacity: .9,
-            color: '#fff'
-        }
-    });
-
-
-    var TYPE = "POST";
-    var URL = fileAc;
-
-    var dataSet = jQuery("#myForm").serialize();
-
-    jQuery.ajax({
-        type: TYPE,
-        url: URL,
-        data: dataSet,
-        success: function(html) {
-
-            jQuery("#boxIconNew").show();
-            jQuery("#boxIconNew").html(html);
-            setTimeout(jQuery.unblockUI, 200);
-
-        }
-    });
-}
-
-function delPicUploadlogo(fileAc) {
-
-    jQuery.blockUI({
-        message: jQuery('#tallContent'),
-        css: {
-            border: 'none',
-            padding: '35px',
-            backgroundColor: '#000',
-            '-webkit-border-radius': '10px',
-            '-moz-border-radius': '10px',
-            opacity: .9,
-            color: '#fff'
-        }
-    });
-
-
-    var TYPE = "POST";
-    var URL = fileAc;
-
-    var dataSet = jQuery("#myForm").serialize();
-
-    jQuery.ajax({
-        type: TYPE,
-        url: URL,
-        data: dataSet,
-        success: function(html) {
-
-            jQuery("#boxPicNew2").show();
-            jQuery("#boxPicNew2").html(html);
-            setTimeout(jQuery.unblockUI, 200);
-
-        }
-    });
-}
 
 
 /* function modDeleteFileUpdateEnews(downloadNewID,menuid,contantNewid) {
@@ -1962,16 +1760,45 @@ function delAlbumUploadOut(fileAc) {
 }
 
 
-var pathck = '/fileman/index.php';
+
 
 // ####################################### End Home ################################################# //
 // ####################################### Start FCK ################################################# //
+// function onLoadFCK() {
+//     if (!CKEDITOR.env.ie || CKEDITOR.env.version > 7)
+//         CKEDITOR.env.isCompatible = true;
+//     var roxyFileman = '/fileman/index.php';
+//     CKEDITOR.replace('editDetail', {
+//         //filebrowserUploadUrl: "../../ckeditor/ckupload.php",
+//         filebrowserUploadUrl: "../../ckeditor/ckupload.php",
+//         filebrowserBrowseUrl: roxyFileman,
+//         filebrowserImageBrowseUrl: roxyFileman + '?type=image',
+//         extraPlugins: 'tableresize,tabletools,quicktable',
+//         removeDialogTabs: 'link:upload;image:upload',
+//         toolbar: [
+//             { name: 'document', groups: ['mode', 'document', 'doctools'], items: ['Source', '-', '-', '-', '-', '-', '-', '-'] },
+//             { name: 'clipboard', groups: ['clipboard', 'undo'], items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo', 'RemoveFormat'] },
+//             { name: 'editing', groups: ['find', 'selection', 'spellchecker'], items: ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt'] },
+//             { name: 'forms', items: ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'] },
+//             '/',
+//             { name: 'basicstyles', groups: ['basicstyles', 'cleanup'], items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'] },
+//             { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi'], items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language'] },
+//             { name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
+//             { name: 'insert', items: ['Image', '-', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe'] },
+//             '/',
+//             { name: 'styles', items: ['Font', 'FontSize'] },
+//             { name: 'colors', items: ['TextColor', 'BGColor'] },
+//             { name: 'tools', items: ['Maximize', '-'] },
+//             { name: 'others', items: ['-'] },
+//             { name: 'about', items: ['-'] }
+//         ]
+//     });
+// }
 function onLoadFCK() {
     
     if (!CKEDITOR.env.ie || CKEDITOR.env.version > 7)
         CKEDITOR.env.isCompatible = true;
-    // var roxyFileman = '/fileman/index.html';
-    var roxyFileman = pathck;
+    var roxyFileman = '/dev23-upict/fileman/index.html';
     CKEDITOR.replace('editDetail', {
         //filebrowserUploadUrl: "../../ckeditor/ckupload.php",
         filebrowserUploadUrl: "../../ckeditor/ckupload.php",
@@ -1998,14 +1825,11 @@ function onLoadFCK() {
         ]
     });
 }
-
-function onLoadFCKSpec() {
-    
+function onLoadFCKen() {
     if (!CKEDITOR.env.ie || CKEDITOR.env.version > 7)
         CKEDITOR.env.isCompatible = true;
-    // var roxyFileman = '/fileman/index.html';
-    var roxyFileman = pathck;
-    CKEDITOR.replace('editDetailspec', {
+    var roxyFileman = '/dev23-upict/fileman/index.php';
+    CKEDITOR.replace('editDetailen', {
         //filebrowserUploadUrl: "../../ckeditor/ckupload.php",
         filebrowserUploadUrl: "../../ckeditor/ckupload.php",
         filebrowserBrowseUrl: roxyFileman,
@@ -2018,7 +1842,7 @@ function onLoadFCKSpec() {
             { name: 'editing', groups: ['find', 'selection', 'spellchecker'], items: ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt'] },
             { name: 'forms', items: ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'] },
             '/',
-            { name: 'basicstyles', groups: ['basicstyles', 'cleanup'], items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', '-'] },
+            { name: 'basicstyles', groups: ['basicstyles', 'cleanup'], items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'] },
             { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi'], items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language'] },
             { name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
             { name: 'insert', items: ['Image', '-', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe'] },
@@ -2032,52 +1856,12 @@ function onLoadFCKSpec() {
     });
 }
 
-function onLoadFCKStore() {
-    
-    if (!CKEDITOR.env.ie || CKEDITOR.env.version > 7)
-        CKEDITOR.env.isCompatible = true;
-    // var roxyFileman = '/fileman/index.html';
-    var roxyFileman = pathck;
-    CKEDITOR.replace('editDetailstore', {
-        //filebrowserUploadUrl: "../../ckeditor/ckupload.php",
-        filebrowserUploadUrl: "../../ckeditor/ckupload.php",
-        filebrowserBrowseUrl: roxyFileman,
-        filebrowserImageBrowseUrl: roxyFileman + '?type=image',
-        extraPlugins: 'tableresize,tabletools,quicktable',
-        removeDialogTabs: 'link:upload;image:upload',
-        toolbar: [
-            { name: 'document', groups: ['mode', 'document', 'doctools'], items: ['Source', '-', '-', '-', '-', '-', '-', '-'] },
-            { name: 'clipboard', groups: ['clipboard', 'undo'], items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo', 'RemoveFormat'] },
-            { name: 'editing', groups: ['find', 'selection', 'spellchecker'], items: ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt'] },
-            { name: 'forms', items: ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'] },
-            '/',
-            { name: 'basicstyles', groups: ['basicstyles', 'cleanup'], items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', '-'] },
-            { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi'], items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language'] },
-            { name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
-            { name: 'insert', items: ['Image', '-', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe'] },
-            '/',
-            { name: 'styles', items: ['Font', 'FontSize'] },
-            { name: 'colors', items: ['TextColor', 'BGColor'] },
-            { name: 'tools', items: ['Maximize', '-'] },
-            { name: 'others', items: ['-'] },
-            { name: 'about', items: ['-'] }
-        ]
-    });
-}
-
-
-
-
-// ####################################### End FCK ################################################# //
-
-
-// ####################################### Start FCK ################################################# //
 function onLoadFCKMini() {
     if (!CKEDITOR.env.ie || CKEDITOR.env.version > 7)
         CKEDITOR.env.isCompatible = true;
-    var roxyFileman = pathck;
+    var roxyFileman = '/dev23-upict/fileman/index.html';
     // var roxyFileman = '/fileman/index.html';
-    CKEDITOR.replace('editDetail', {
+    CKEDITOR.replace('editDetail2', {
         //filebrowserUploadUrl: "../../ckeditor/ckupload.php",
         filebrowserUploadUrl: "../../ckeditor/ckupload.php",
         filebrowserBrowseUrl: roxyFileman,
@@ -2085,6 +1869,7 @@ function onLoadFCKMini() {
         extraPlugins: 'tableresize,tabletools,quicktable',
         removeDialogTabs: 'link:upload;image:upload',
         toolbar: [
+            { name: 'document', groups: ['mode', 'document', 'doctools'], items: ['Source', '-', '-', '-', '-', '-', '-', '-'] },
             { name: 'basicstyles', groups: ['basicstyles', 'cleanup'], items: ['Bold', 'Italic', 'Underline', '-', '-', '-', '-', '-'] },
             { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi'], items: ['NumberedList', 'BulletedList', '-', '-', '-', '-', '-', '-', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', '-', '-', '-'] },
             { name: 'insert', items: ['-', '-', '-', '-', 'Smiley', '-', '-', '-'] },
@@ -2092,14 +1877,10 @@ function onLoadFCKMini() {
             { name: 'tools', items: ['-', '-'] },
             { name: 'others', items: ['-'] },
             { name: 'about', items: ['-'] }
-        ],
-        height: '150px'
+        ]
     });
 }
 
-function submitResetFck() {
-    CKEDITOR.instances.editDetail.setData("");
-}
 
 // ####################################### End FCK ################################################# //
 
@@ -2761,91 +2542,26 @@ function insertCommentBlog1() {
 
 
 
-function changeStatusPage(loaddder, tablename, statusname, statusid, loadderstatus, fileAc, idpage) {
-
-    jQuery("#" + loaddder + "").show();
-
-    var TYPE = "POST";
-    var URL = fileAc;
-    var dataSet = {
-        Valueloaddder: loaddder,
-        Valuetablename: tablename,
-        Valuestatusname: statusname,
-        Valuestatusid: statusid,
-        Valueloadderstatus: loadderstatus,
-        Valuefilestatus: fileAc,
-        ValuePageset: idpage,
-    };
-
-
-    jQuery.ajax({
-        type: TYPE,
-        url: URL,
-        data: dataSet,
-        success: function(html) {
-
-            jQuery("#" + loadderstatus + "").show();
-            jQuery("#" + loadderstatus + "").html(html)
-            jQuery("#" + loaddder + "").hide();
+//######################## JUMPPAGE
+$('.divRightMain.showJumpPage table tbody tr:last').append('<td width="10" align="center" style="padding-right:5px;padding-left:5px;"><input class="formInputContantTbShotJumppage" type="number" min="0" step="1" id="pagination_jumppage" name="pagination_jumppage" value="" placeholder="ไปหน้า"></td>');
+$('input[name="pagination_jumppage"]').keyup(function(e) {
+    if (e.keyCode == 13) {
+        var pagination_jumppage = $(this).val();
+        if ($.isNumeric(pagination_jumppage) && pagination_jumppage > 0) {
+            $('#myForm input[name="module_pageshow"]').val(pagination_jumppage);
+            $('#myForm').submit();
         }
-    });
+    }
+});
+
+
+function replaceAll(str, find, replace) {
+    return str.replace(new RegExp(find, 'g'), replace);
 }
 
 
 
-// pin
-function changeDefaultType(loaddder, statusid, tablename, statusname, masterkey, loadderstatus, fileAc, valdiv) {
-    jQuery("." + loaddder + "").show();
-
-    var TYPE = "POST";
-    var URL = fileAc;
-    var dataSet = {
-        Valueloaddder: loaddder,
-        Valuetablename: tablename,
-        Valuestatusname: statusname,
-        Valuestatusid: statusid,
-        Valueloadderstatus: loadderstatus,
-        Valuefilestatus: fileAc,
-        Valuemasterkey: masterkey,
-        Valuediv: valdiv
-    };
-
-    // console.log(dataSet);
-
-    jQuery.ajax({
-        type: TYPE,
-        url: URL,
-        data: dataSet,
-        dataType: "json",
-        success: function(result) {
-            // console.log('test');
-            $.each(result, function(i, field) {
-                //   list = field.toString().replace(/\\/g, "/");
-                // console.log(valdiv + ' ' + i);
-                // console.log(field);
-
-
-                jQuery("#" + valdiv + i + "").show();
-                jQuery("#" + valdiv + i + "").html(field);
-                //  jQuery("#" + valdiv + i + "").html("test");
-
-                jQuery("." + loaddder + "").hide();
-            });
-
-
-        }
-    });
-}
-
-function loadpageover(fileAc) {
-    document.myFormHome.action = fileAc;
-    document.myFormHome.submit();
-}
-
-// function directTo(fileAc){
-//     $().redirect('fileAc', );
-// }
-function delPicUpload2(fileAc) {
+function delPicUpload_mul(fileAc, ele) {
 
     jQuery.blockUI({
         message: jQuery('#tallContent'),
@@ -2872,410 +2588,10 @@ function delPicUpload2(fileAc) {
         data: dataSet,
         success: function(html) {
 
-            jQuery("#boxPicNew2").show();
-            jQuery("#boxPicNew2").html(html);
+            jQuery(ele).show();
+            jQuery(ele).html(html);
             setTimeout(jQuery.unblockUI, 200);
 
         }
     });
 }
-
-// function navBarGoto(params='',value=''){
-    
-//     if($('form#myForm #inputNavBar').length == 0){
-//         $('form#myForm').append('<input type="hidden" id="inputNavBar" />')
-//     }
-//     console.log(params);
-//     console.log(value);
-//     $('#inputNavBar').val(value).removeAttr('name').attr('name',params);
-//     $('form#myForm').submit();
-// }
-
-function navBarGoto(params='',value='') {
-    document.myFormHome.inputEqual.value = value;
-    document.myFormHome.submit();
-}
-
-function btnBackPageSubPage(fileAc) {
-	document.myFormHome.module_pageshow.value = "";	
-	document.myFormHome.module_pagesize.value = "";	
-	document.myFormHome.module_orderby.value = "";	
-	document.myFormHome.action = fileAc;
-	document.myFormHome.submit();
-}
-
-// START REGISTER DMSC KIS
-function submitregister(){
-    // var base_url = window.location.origin;
-    // var pathArray = window.location.pathname.split( '/' );
-    // // console.log(base_url+'/'+pathArray[1]+'/register.php');
-    // window.location.href = base_url+'/'+pathArray[1]+'/register.php';
-    window.location.href = './user_action/register.php';
-}
-
-function goBack() {
-    window.history.back();
-}
-
-function CheckPassword(inputtxt){ 
-	var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/;
-	if(inputtxt.value.match(passw)) { 
-		return true;
-	}else{ 
-		return false;
-	}
-}
-
-function nextstep() {
-    if($('#inputUserName').val() === ""){
-        $('#inputUserName').focus();
-        return false;
-    }
-    if ($('#inputPass').val() === "") {
-        $('#inputPass').focus();
-        return false;
-    }
-	
-	if (!CheckPassword(document.myForm.inputPass)) {
-		$('#inputPass').focus();
-		$('#notePass').css("color", "red")
-		return false;
-	}else{
-		$('#notePass').css("color", "#8496aa")
-	}
-	 
-    if ($('#inputRePass').val() === "") {
-        $('#inputRePass').focus();
-        return false;
-    }
-	
-	if (!CheckPassword(document.myForm.inputRePass)) {
-		$('#inputRePass').focus();
-		$('#noteRePass').css("color", "red")
-		return false;
-	}else{
-		$('#noteRePass').css("color", "#8496aa")
-	}
-
-	if ($('#inputRePass').val() != $('#inputPass').val()) {
-        $('#inputPass').focus();
-        return false;
-    }
-    const email = $("#inputEmail").val();
-    if(!validateEmail(email)){
-        $('#inputEmail').focus();
-        return false;
-    }
-    if ($('#inputgroupAgency').val() === "" || $('#inputgroupAgency').val() == 0) {
-        $('#inputgroupAgency').focus();
-        return false;
-    }
-    $('.form-sectionOne').hide();
-    $('.form-sectionTwo').show();
-    $('.float-right').html('2/2');
-}
-function backstep(){
-    $('.form-sectionOne').show();
-    $('.form-sectionTwo').hide();
-    $('.float-right').html('1/2');
-}
-function checkUsermemberRegister(username) {
-
-    jQuery.blockUI({
-        message: jQuery('#tallContent'),
-        css: {
-            border: 'none',
-            padding: '35px',
-            backgroundColor: '#000',
-            '-webkit-border-radius': '10px',
-            '-moz-border-radius': '10px',
-            opacity: .9,
-            color: '#fff'
-        }
-    });
-
-    var TYPE = "POST";
-    var URL = "../core/checkUser.php";
-    var dataSet = jQuery("#myForm").serialize();
-
-    jQuery.ajax({
-        type: TYPE,
-        url: URL,
-        data: dataSet,
-        success: function(html) {
-
-            jQuery("#loadCheckComplete").show();
-            jQuery("#loadCheckComplete").html(html);
-            setTimeout(jQuery.unblockUI, 200);
-        }
-    });
-}
-function checkUserEmailRegister(username) {
-
-    jQuery.blockUI({
-        message: jQuery('#tallContent'),
-        css: {
-            border: 'none',
-            padding: '35px',
-            backgroundColor: '#000',
-            '-webkit-border-radius': '10px',
-            '-moz-border-radius': '10px',
-            opacity: .9,
-            color: '#fff'
-        }
-    });
-
-    var TYPE = "POST";
-    var URL = "../core/checkEmail.php";
-    var dataSet = jQuery("#myForm").serialize();
-
-    jQuery.ajax({
-        type: TYPE,
-        url: URL,
-        data: dataSet,
-        success: function(html) {
-
-            jQuery("#loadCheckComplete").show();
-            jQuery("#loadCheckComplete").html(html);
-            setTimeout(jQuery.unblockUI, 200);
-        }
-    });
-}
-function checkUserEmailEdit(username) {
-    jQuery.blockUI({
-        message: jQuery('#tallContent'),
-        css: {
-            border: 'none',
-            padding: '35px',
-            backgroundColor: '#000',
-            '-webkit-border-radius': '10px',
-            '-moz-border-radius': '10px',
-            opacity: .9,
-            color: '#fff'
-        }
-    });
-
-    var TYPE = "POST";
-    var URL = "../core/checkEmail_tmp.php";
-    var dataSet = jQuery("#myForm").serialize();
-
-    jQuery.ajax({
-        type: TYPE,
-        url: URL,
-        data: dataSet,
-        success: function(html) {
-
-            jQuery("#loadCheckComplete").show();
-            jQuery("#loadCheckComplete").html(html);
-            setTimeout(jQuery.unblockUI, 200);
-        }
-    });
-}
-function checkreCapcha(username) {
-
-    jQuery.blockUI({
-        message: jQuery('#tallContent'),
-        css: {
-            border: 'none',
-            padding: '35px',
-            backgroundColor: '#000',
-            '-webkit-border-radius': '10px',
-            '-moz-border-radius': '10px',
-            opacity: .9,
-            color: '#fff'
-        }
-    });
-
-    var TYPE = "POST";
-    var URL = "./registerUser.php";
-    var dataSet = jQuery("#myForm").serialize();
-
-    jQuery.ajax({
-        type: TYPE,
-        url: URL,
-        data: dataSet,
-        success: function(html) {
-
-            jQuery("#loadCheckComplete").show();
-            jQuery("#loadCheckComplete").html(html);
-            setTimeout(jQuery.unblockUI, 200);
-        }
-    });
-}
-function backLogin(){
-    // var base_url = window.location.origin;
-    // var pathArray = window.location.pathname.split( '/' );
-    // // console.log(base_url);
-    // // console.log(pathArray);
-    // // console.log(base_url+'/'+pathArray[1]+'/'+pathArray[2]);
-    // window.location.href = base_url+'/'+pathArray[1]+'/'+pathArray[2];
-    window.location.href = '../index.php';
-}
-function btnBackPageLogin(fileAc) {
-    window.location.href = fileAc;
-}
-function forGetPass(){
-    // var base_url = window.location.origin;
-    // var pathArray = window.location.pathname.split( '/' );
-    // // console.log(base_url+'/'+pathArray[1]+'/core/forgetpass.php');
-    // window.location.href = base_url+'/'+pathArray[1]+'/core/forgetpass.php';
-    window.location.href = './user_action/forgetpass.php';
-}
-function forGetPassAjax(username) {
-
-    jQuery.blockUI({
-        message: jQuery('#tallContent'),
-        css: {
-            border: 'none',
-            padding: '35px',
-            backgroundColor: '#000',
-            '-webkit-border-radius': '10px',
-            '-moz-border-radius': '10px',
-            opacity: .9,
-            color: '#fff'
-        }
-    });
-
-    var TYPE = "POST";
-    var URL = "./forgetpassSend.php";
-    var dataSet = jQuery("#myForm").serialize();
-
-    jQuery.ajax({
-        type: TYPE,
-        url: URL,
-        data: dataSet,
-        success: function(html) {
-
-            jQuery("#loadCheckComplete").show();
-            jQuery("#loadCheckComplete").html(html);
-            setTimeout(jQuery.unblockUI, 200);
-        }
-    });
-}
-function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-}
-
-// recapcha img
-var path = $("base").attr("href");
-function loadNewCaptchaFit() {
-    jQuery("#captcha").load("captcha/captchaShow.php?" + new Date().getTime());
-}
-function loadNewCaptchaFoeget() {
-    jQuery("#captcha").load("../captcha2/captchaShow.php?" + new Date().getTime());
-}
-// recapcha img
-// END REGISTER DMSC KIS
-
-
-// NEW LOGIN BY BONZ 20/07/2023
-function checkLoginUser() {
-    jQuery.blockUI({
-        message: jQuery('#tallContent'),
-        css: {
-            border: 'none',
-            padding: '35px',
-            backgroundColor: '#000',
-            '-webkit-border-radius': '10px',
-            '-moz-border-radius': '10px',
-            opacity: .9,
-            color: '#fff'
-        }
-    });
-
-    var TYPE = "POST";
-    var URL = "core/login.php";
-
-    var dataSet = jQuery("#myFormLogin").serialize();
-    jQuery.ajax({
-        type: TYPE,
-        url: URL,
-        data: dataSet,
-        success: function(res) {
-            $('#loadAlertLogin').hide();
-            if (res?.status) {
-                if (res?.item.length > 0) {
-                    $('.select-site').hide();
-                    $('.show-site').show();
-
-                    let strHTML = "";
-                    res.item.forEach(value => {
-                        strHTML += `
-                        <div class="cover click-item2">
-                            <a href="javascript:void(0);" class="link click-item" data-id="${value.id}">
-                                <img src="${value.pic}" alt="${value.subject}" class="click-item3">
-                                <div class="desc">${value.subject}</div>
-                            </a>
-                        </div>
-                        `;
-                    });
-                    $('.wg-item').html(strHTML);
-
-                    // on load for event click
-                    $( ".click-item" ).on( "click", function() {
-                        auth_site($(this).data('id'));
-                    });
-                }else{
-                    $('#loadAlertLogin #text-append').text('Something went wrong.');
-                    $('#loadAlertLogin').show();
-                }
-            }else{
-                let msg = res?.msg ? res?.msg : 'api error.';
-                $('#loadAlertLogin #text-append').text(msg);
-                $('#loadAlertLogin').show();
-            }
-            setTimeout(jQuery.unblockUI, 200);
-        }
-    });
-}
-
-function auth_site(site_id){
-
-    $('#inputSite').val(site_id);
-
-    jQuery.blockUI({
-        message: jQuery('#tallContent'),
-        css: {
-            border: 'none',
-            padding: '35px',
-            backgroundColor: '#000',
-            '-webkit-border-radius': '10px',
-            '-moz-border-radius': '10px',
-            opacity: .9,
-            color: '#fff'
-        }
-    });
-
-    var TYPE = "POST";
-    var URL = "core/login_auth.php";
-    var dataSet = jQuery("#myFormLogin").serialize();
-
-    jQuery.ajax({
-        type: TYPE,
-        url: URL,
-        data: dataSet,
-        success: function(res) {
-
-            if (res?.status) {
-                if (res?.url) {
-                    // console.log(res.url);
-                    window.location.href = res.url;
-                }else{
-
-                }
-            }else{
-
-            }
-            setTimeout(jQuery.unblockUI, 200);
-        }
-    });
-}
-
-// $('.click-item').on('click', function() {
-//     console.log($(this));
-// })
-
-// $('.click-item2').on('click', () => {
-//     console.log($(this));
-// })

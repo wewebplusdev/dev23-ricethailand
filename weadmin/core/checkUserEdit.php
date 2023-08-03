@@ -1,4 +1,4 @@
-<?php  
+<?php
 @include("../lib/session.php");
 include("../lib/config.php");
 include("../lib/connect.php");
@@ -24,22 +24,22 @@ include("../lib/function.php");
            ?>
 		<script language="JavaScript" type="text/javascript">
 			jQuery("#inputUserName").addClass("formInputContantTbAlertY"); 
-			document.myForm.inputUserName.value='<?php   echo $Row_name[0]?>'
+			document.myForm.inputUserName.value='<?php echo $Row_name[0]?>'
 			document.myForm.inputUserName.focus();
         </script>
-			<?php   }else{?>
+			<?php }else{?>
 			
 		<script language="JavaScript" type="text/javascript">
 			jQuery("#inputUserName").removeClass("formInputContantTbAlertY"); 
         </script>
-			<?php   }
+			<?php }
 		
 }else{
 ?>
 		<script language="JavaScript" type="text/javascript">
 			jQuery("#inputUserName").removeClass("formInputContantTbAlertY"); 
         </script>
-<?php   } ?>
+<?php }?>
   
     
 

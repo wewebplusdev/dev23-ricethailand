@@ -1,4 +1,4 @@
-<?php  
+<?php
 @include("../lib/session.php");
 include("../lib/config.php");
 include("../lib/classpic.php");
@@ -12,7 +12,7 @@ include("../lib/function.php");
 <title>Uuload File</title>
 </head>
 <body>
-<?php  
+<?php
 	$error ="";
 	$msg = "";
 	$fileElementName = 'fileToUpload3';

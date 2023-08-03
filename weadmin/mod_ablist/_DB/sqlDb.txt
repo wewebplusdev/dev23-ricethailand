@@ -1,0 +1,202 @@
+-- phpMyAdmin SQL Dump
+-- version 4.4.15
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jun 25, 2018 at 09:32 AM
+-- Server version: 10.0.32-MariaDB
+-- PHP Version: 5.3.29
+
+SET sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'; 
+SET @@global.sql_mode= '';
+
+--
+-- Database: `neda`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_al`
+--
+
+CREATE TABLE IF NOT EXISTS `md_al` (
+  `md_al_id` int(11) NOT NULL,
+  `md_al_masterkey` varchar(20) NOT NULL,
+  `md_al_language` varchar(50) NOT NULL,
+  `md_al_htmlfilename` varchar(255) NOT NULL,
+  `md_al_crebyid` int(11) NOT NULL DEFAULT '0',
+  `md_al_creby` varchar(100) NOT NULL,
+  `md_al_credate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_al_lastdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_al_status` varchar(50) NOT NULL,
+  `md_al_description` text NOT NULL,
+  `md_al_keywords` text NOT NULL,
+  `md_al_metatitle` text NOT NULL,
+  `md_al_view` int(11) NOT NULL,
+  `md_al_subject` varchar(255) NOT NULL,
+  `md_al_order` int(11) NOT NULL,
+  `md_al_subjecten` varchar(255) NOT NULL,
+  `md_al_htmlfilenameen` varchar(255) NOT NULL,
+  `md_al_descriptionen` text NOT NULL,
+  `md_al_keywordsen` text NOT NULL,
+  `md_al_metatitleen` text NOT NULL,
+  `md_al_lastbyid` int(11) NOT NULL,
+  `md_al_lastby` varchar(255) NOT NULL,
+  `md_al_book` int(11) NOT NULL,
+  `md_al_gid` int(11) NOT NULL,
+  `md_al_type` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_alf`
+--
+
+CREATE TABLE IF NOT EXISTS `md_alf` (
+  `md_alf_id` int(11) NOT NULL,
+  `md_alf_contantid` varchar(255) NOT NULL,
+  `md_alf_filename` varchar(200) NOT NULL,
+  `md_alf_name` varchar(200) NOT NULL,
+  `md_alf_download` int(11) NOT NULL DEFAULT '0',
+  `md_alf_language` varchar(25) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_alftmp`
+--
+
+CREATE TABLE IF NOT EXISTS `md_alftmp` (
+  `md_alftmp_id` int(11) NOT NULL,
+  `md_alftmp_contantid` varchar(255) NOT NULL DEFAULT '0',
+  `md_alftmp_filename` varchar(200) NOT NULL,
+  `md_alftmp_name` varchar(200) NOT NULL,
+  `md_alftmp_download` int(11) NOT NULL DEFAULT '0',
+  `md_alftmp_language` varchar(25) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_alg`
+--
+
+CREATE TABLE IF NOT EXISTS `md_alg` (
+  `md_alg_id` int(11) NOT NULL,
+  `md_alg_masterkey` varchar(20) NOT NULL,
+  `md_alg_language` varchar(50) NOT NULL,
+  `md_alg_subject` varchar(200) NOT NULL,
+  `md_alg_title` text NOT NULL,
+  `md_alg_crebyid` int(11) NOT NULL DEFAULT '0',
+  `md_alg_creby` varchar(100) NOT NULL,
+  `md_alg_credate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_alg_lastdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_alg_status` varchar(50) NOT NULL,
+  `md_alg_order` int(11) NOT NULL DEFAULT '0',
+  `md_alg_subjecten` varchar(255) NOT NULL,
+  `md_alg_titleen` text NOT NULL,
+  `md_alg_lastbyid` int(11) NOT NULL,
+  `md_alg_lastby` varchar(255) NOT NULL,
+  `md_alg_type` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_alp`
+--
+
+CREATE TABLE IF NOT EXISTS `md_alp` (
+  `md_alp_id` int(11) NOT NULL,
+  `md_alp_cid` varchar(255) DEFAULT NULL,
+  `md_alp_masterkey` varchar(255) DEFAULT NULL,
+  `md_alp_subject` varchar(255) DEFAULT NULL,
+  `md_alp_title` varchar(255) DEFAULT NULL,
+  `md_alp_subjecten` varchar(255) DEFAULT NULL,
+  `md_alp_titleen` varchar(255) DEFAULT NULL,
+  `md_alp_pic` varchar(255) DEFAULT NULL,
+  `md_alp_status` varchar(255) DEFAULT NULL,
+  `md_alp_parent` int(11) DEFAULT NULL,
+  `md_alp_datecre` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `md_al`
+--
+ALTER TABLE `md_al`
+  ADD PRIMARY KEY (`md_al_id`),
+  ADD UNIQUE KEY `md_al_id` (`md_al_id`),
+  ADD KEY `md_al_id_2` (`md_al_id`);
+
+--
+-- Indexes for table `md_alf`
+--
+ALTER TABLE `md_alf`
+  ADD PRIMARY KEY (`md_alf_id`);
+
+--
+-- Indexes for table `md_alftmp`
+--
+ALTER TABLE `md_alftmp`
+  ADD PRIMARY KEY (`md_alftmp_id`);
+
+--
+-- Indexes for table `md_alg`
+--
+ALTER TABLE `md_alg`
+  ADD PRIMARY KEY (`md_alg_id`),
+  ADD UNIQUE KEY `md_alg_id` (`md_alg_id`),
+  ADD KEY `md_alg_masterkey` (`md_alg_masterkey`);
+
+--
+-- Indexes for table `md_alp`
+--
+ALTER TABLE `md_alp`
+  ADD PRIMARY KEY (`md_alp_id`),
+  ADD KEY `md_alp_cid` (`md_alp_cid`),
+  ADD KEY `md_alp_masterkey` (`md_alp_masterkey`),
+  ADD KEY `md_alp_subject` (`md_alp_subject`),
+  ADD KEY `md_alp_title` (`md_alp_title`),
+  ADD KEY `md_alp_subjecten` (`md_alp_subjecten`),
+  ADD KEY `md_alp_titleen` (`md_alp_titleen`),
+  ADD KEY `md_alp_pic` (`md_alp_pic`),
+  ADD KEY `md_alp_status` (`md_alp_status`),
+  ADD KEY `md_alp_parent` (`md_alp_parent`),
+  ADD KEY `md_alp_datecre` (`md_alp_datecre`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `md_al`
+--
+ALTER TABLE `md_al`
+  MODIFY `md_al_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `md_alf`
+--
+ALTER TABLE `md_alf`
+  MODIFY `md_alf_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `md_alftmp`
+--
+ALTER TABLE `md_alftmp`
+  MODIFY `md_alftmp_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `md_alg`
+--
+ALTER TABLE `md_alg`
+  MODIFY `md_alg_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `md_alp`
+--
+ALTER TABLE `md_alp`
+  MODIFY `md_alp_id` int(11) NOT NULL AUTO_INCREMENT;

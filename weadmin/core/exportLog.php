@@ -1,4 +1,4 @@
-<?php  
+<?php
 @include("../lib/session.php");
 include("../lib/checkMemberSA.php");
 header("Content-Type: application/vnd.ms-excel");
@@ -38,7 +38,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
       <td width="175" align="center" bgcolor="#eeeeee" class="bold" valign="middle">วันที่</td>
     </tr>
     
-    <?php  
+    <?php
 	$date_print =date('Y-m-d');
 	$sqlLogs="SELECT ".$core_tb_log."_action, ".$core_tb_log."_sessid, ".$core_tb_log."_sid, ".$core_tb_log."_sname, ".$core_tb_log."_ip, ".$core_tb_log."_time, ".$core_tb_log."_type, ".$core_tb_log."_actiontype 	, ".$core_tb_log."_url, ".$core_tb_log."_key, ".$core_tb_log."_menuid   FROM ".$core_tb_log." WHERE   ".$core_tb_log."_id 	>=1 ORDER BY ".$core_tb_log."_time DESC";
 	$queryLogs=wewebQueryDB($coreLanguageSQL,$sqlLogs);
@@ -78,12 +78,12 @@ xmlns="http://www.w3.org/TR/REC-html40">
 			?>
     
     <tr bgcolor="#ffffff">
-      <td height="30" align="left"  valign="middle"><?php   echo $valNameMenu?></td>
-      <td align="left"  valign="middle"><?php   echo $valAction?></td>
-      <td align="left" valign="middle"><?php   echo $valNameUser?></td>
-      <td align="left" valign="middle"><?php   echo $valTime?></td>
+      <td height="30" align="left"  valign="middle"><?php echo $valNameMenu?></td>
+      <td align="left"  valign="middle"><?php echo $valAction?></td>
+      <td align="left" valign="middle"><?php echo $valNameUser?></td>
+      <td align="left" valign="middle"><?php echo $valTime?></td>
     </tr>
-	<?php   
+	<?php 
                 }
      } ?>
     </tbody>
@@ -92,7 +92,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
   <tbody>
         <tr >
       <td width="175" align="right" valign="middle" class="bold">Print date : </td>
-      <td  width="175" align="left" valign="middle"><?php   echo $date_print?></td>
+      <td  width="175" align="left" valign="middle"><?php echo $date_print?></td>
     </tr>
   </tbody>
 </table>

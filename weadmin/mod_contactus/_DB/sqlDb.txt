@@ -1,0 +1,124 @@
+-- phpMyAdmin SQL Dump
+-- version 4.4.15
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Nov 15, 2017 at 04:57 AM
+-- Server version: 10.0.32-MariaDB
+-- PHP Version: 5.3.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `newweb_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_vig`
+--
+
+CREATE TABLE IF NOT EXISTS `md_vig` (
+  `md_vig_id` int(11) NOT NULL,
+  `md_vig_masterkey` varchar(20) NOT NULL,
+  `md_vig_language` varchar(50) NOT NULL,
+  `md_vig_subject` varchar(200) NOT NULL,
+  `md_vig_title` text NOT NULL,
+  `md_vig_crebyid` int(11) NOT NULL DEFAULT '0',
+  `md_vig_creby` varchar(100) NOT NULL,
+  `md_vig_credate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_vig_lastdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_vig_status` varchar(50) NOT NULL,
+  `md_vig_order` int(11) NOT NULL DEFAULT '0',
+  `md_vig_subjecten` varchar(255) NOT NULL,
+  `md_vig_titleen` text NOT NULL,
+  `md_vig_lastbyid` int(11) NOT NULL,
+  `md_vig_lastby` varchar(255) NOT NULL,
+  `md_vig_subjectcn` varchar(255) NOT NULL,
+  `md_vig_titlecn` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_vis`
+--
+
+CREATE TABLE IF NOT EXISTS `md_vis` (
+  `md_vis_id` int(11) NOT NULL,
+  `md_vis_masterkey` varchar(20) NOT NULL,
+  `md_vis_language` varchar(50) NOT NULL,
+  `md_vis_subject` text NOT NULL,
+  `md_vis_title` text NOT NULL,
+  `md_vis_htmlfilename` varchar(255) NOT NULL,
+  `md_vis_pic` varchar(50) NOT NULL,
+  `md_vis_crebyid` int(11) NOT NULL DEFAULT '0',
+  `md_vis_creby` varchar(100) NOT NULL,
+  `md_vis_credate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_vis_lastdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_vis_sdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_vis_edate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_vis_status` varchar(50) NOT NULL,
+  `md_vis_order` int(11) NOT NULL DEFAULT '0',
+  `md_vis_view` int(11) NOT NULL DEFAULT '0',
+  `md_vis_description` text NOT NULL,
+  `md_vis_keywords` text NOT NULL,
+  `md_vis_metatitle` text NOT NULL,
+  `md_vis_type` varchar(50) NOT NULL,
+  `md_vis_filevdo` varchar(255) NOT NULL,
+  `md_vis_url` text NOT NULL,
+  `md_vis_subjecten` varchar(255) NOT NULL,
+  `md_vis_lastbyid` int(11) NOT NULL,
+  `md_vis_lastby` varchar(255) NOT NULL,
+  `md_vis_htmlfilenameen` varchar(225) NOT NULL,
+  `md_vis_titleen` text NOT NULL,
+  `md_vis_gid` int(11) NOT NULL,
+  `md_vis_keywordsen` text NOT NULL,
+  `md_vis_metatitleen` text NOT NULL,
+  `md_vis_descriptionen` text NOT NULL,
+  `md_vis_picshow` int(11) NOT NULL,
+  `md_vis_subjectcn` varchar(255) NOT NULL,
+  `md_vis_titlecn` text NOT NULL,
+  `md_vis_htmlfilenamecn` varchar(255) NOT NULL,
+  `md_vis_descriptioncn` text NOT NULL,
+  `md_vis_keywordscn` text NOT NULL,
+  `md_vis_metatitlecn` text NOT NULL,
+  `md_vis_play` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `md_vig`
+--
+ALTER TABLE `md_vig`
+  ADD PRIMARY KEY (`md_vig_id`),
+  ADD UNIQUE KEY `md_vig_id` (`md_vig_id`),
+  ADD KEY `md_vig_id_2` (`md_vig_id`);
+
+--
+-- Indexes for table `md_vis`
+--
+ALTER TABLE `md_vis`
+  ADD PRIMARY KEY (`md_vis_id`),
+  ADD UNIQUE KEY `md_vis_id` (`md_vis_id`),
+  ADD KEY `md_vis_id_2` (`md_vis_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `md_vig`
+--
+ALTER TABLE `md_vig`
+  MODIFY `md_vig_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `md_vis`
+--
+ALTER TABLE `md_vis`
+  MODIFY `md_vis_id` int(11) NOT NULL AUTO_INCREMENT;

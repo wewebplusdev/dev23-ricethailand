@@ -1,4 +1,4 @@
-<?php  
+<?php
 include("../lib/session.php");
 include("../lib/config.php");
 include("../lib/connect.php");
@@ -19,8 +19,8 @@ $valNav2 = $langTxt["nav:perManage2"];
             <meta name="googlebot" content="noindex, nofollow">
 
                 <link href="../css/theme.css" rel="stylesheet"/>
-                <title><?php   echo  $core_name_title ?></title>
-                <script language="JavaScript"  type="text/javascript" src="../js/jquery-3.7.0.min.js"></script>
+                <title><?php echo  $core_name_title ?></title>
+                <script language="JavaScript"  type="text/javascript" src="../js/jquery-1.9.0.js"></script>
                 <script language="JavaScript"  type="text/javascript" src="../js/jquery.blockUI.js"></script>
                 <script language="JavaScript"  type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
                 <script type="text/javascript" language="javascript">
@@ -30,7 +30,7 @@ $valNav2 = $langTxt["nav:perManage2"];
                 </head>
 
                 <body>
-                    <?php  
+                    <?php
 // Check to set default value #########################
                     $module_default_pagesize = $core_default_pagesize;
                     $module_default_maxpage = $core_default_maxpage;
@@ -79,29 +79,26 @@ $valNav2 = $langTxt["nav:perManage2"];
                     }
                     ?>
                     <form action="?" method="post" name="myForm" id="myForm">
-                        <input name="masterkey" type="hidden" id="masterkey" value="<?php   echo  $_REQUEST['masterkey'] ?>" />
-                        <input name="menukeyid" type="hidden" id="menukeyid" value="<?php   echo  $_REQUEST['menukeyid'] ?>" />
-                        <input name="module_pageshow" type="hidden" id="module_pageshow" value="<?php   echo  $module_pageshow ?>" />
-                        <input name="module_pagesize" type="hidden" id="module_pagesize" value="<?php   echo  $module_pagesize ?>" />
-                        <input name="module_orderby" type="hidden" id="module_orderby" value="<?php   echo  $module_orderby ?>" />
+                        <input name="masterkey" type="hidden" id="masterkey" value="<?php echo  $_REQUEST['masterkey'] ?>" />
+                        <input name="menukeyid" type="hidden" id="menukeyid" value="<?php echo  $_REQUEST['menukeyid'] ?>" />
+                        <input name="module_pageshow" type="hidden" id="module_pageshow" value="<?php echo  $module_pageshow ?>" />
+                        <input name="module_pagesize" type="hidden" id="module_pagesize" value="<?php echo  $module_pagesize ?>" />
+                        <input name="module_orderby" type="hidden" id="module_orderby" value="<?php echo  $module_orderby ?>" />
                         <div class="divRightNav">
                             <table width="96%" border="0" cellspacing="0" cellpadding="0"  align="center" >
                                 <tr>
-                                    <td  class="divRightNavTb" align="left"><span class="fontContantTbNav"><a href="<?php   echo  $valLinkNav1 ?>" target="_self"><?php   echo  $valNav1 ?></a> <img src="../img/btn/nav.png" align="absmiddle" vspace="5" /> <?php   echo  $valNav2 ?></span></td>
+                                    <td  class="divRightNavTb" align="left"><span class="fontContantTbNav"><a href="<?php echo  $valLinkNav1 ?>" target="_self"><?php echo  $valNav1 ?></a> <img src="../img/btn/nav.png" align="absmiddle" vspace="5" /> <?php echo  $valNav2 ?></span></td>
                                     <td  class="divRightNavTb" align="right">
                                         <table  border="0" cellspacing="0" cellpadding="0" align="right">
                                             <tr>
                                                 <td>
                                                     <select name="inputGh"  id="inputGh"class="formSelectSearch" onchange="document.myForm.submit();
                                                             ">
-                                                        <option value="0"><?php   echo  $langTxt["pr:select"] ?></option>
-                                                        <option value="admin" <?php   if ($_REQUEST['inputGh'] == "admin") { ?>selected="selected" <?php   } ?>><?php   echo  $langTxt["pr:select1"] ?></option>
-                                                        <option value="staff" <?php   if ($_REQUEST['inputGh'] == "staff") { ?>selected="selected" <?php   } ?>><?php   echo  $langTxt["pr:select2"] ?></option>
-                                                        <!-- <?php   if($_SESSION[$valSiteManage."core_session_groupid"] == 0){ ?>
-                                                        <option value="minisite" <?php   if ($_REQUEST['inputGh'] == "minisite") { ?>selected="selected" <?php   } ?>><?php   echo  $langTxt["pr:select3"] ?></option>
-                                                        <?php   } ?> -->
+                                                        <option value="0"><?php echo  $langTxt["pr:select"] ?></option>
+                                                        <option value="admin" <?php if ($_REQUEST['inputGh'] == "admin") { ?>selected="selected" <?php } ?>><?php echo  $langTxt["pr:select1"] ?></option>
+                                                        <option value="staff" <?php if ($_REQUEST['inputGh'] == "staff") { ?>selected="selected" <?php } ?>><?php echo  $langTxt["pr:select2"] ?></option>
                                                     </select></td>
-                                                <td align="right"><input name="inputSearch" type="text"  id="inputSearch" value="<?php   echo  trim($_REQUEST['inputSearch']) ?>" class="inputContantTb"/></td>
+                                                <td align="right"><input name="inputSearch" type="text"  id="inputSearch" value="<?php echo  trim($_REQUEST['inputSearch']) ?>" class="inputContantTb"/></td>
                                                 <td align="right"><input name="searchOk" id="searchOk" onClick="document.myForm.submit();"  type="button" class="btnSearch"  value=" "  /></td>
                                             </tr>
                                         </table>
@@ -114,22 +111,22 @@ $valNav2 = $langTxt["nav:perManage2"];
                         <div class="divRightHead">
                             <table width="96%" border="0" cellspacing="0" cellpadding="0" class="borderBottom" align="center" >
                                 <tr>
-                                    <td height="77" align="left"><span class="fontHeadRight"><?php   echo  $valNav2 ?></span></td>
+                                    <td height="77" align="left"><span class="fontHeadRight"><?php echo  $valNav2 ?></span></td>
                                     <td align="left">
                                         <table  border="0" cellspacing="0" cellpadding="0" align="right">
                                             <tr>
                                                 <td align="right">
-                                                    <div  class="btnAdd" title="<?php   echo  $langTxt["btn:add"] ?>" onclick="addContactNew('../core/addPermis.php');"></div>
-                                                    <div  class="btnDel" title="<?php   echo  $langTxt["btn:del"] ?>"   onclick="
+                                                    <div  class="btnAdd" title="<?php echo  $langTxt["btn:add"] ?>" onclick="addContactNew('../core/addPermis.php');"></div>
+                                                    <div  class="btnDel" title="<?php echo  $langTxt["btn:del"] ?>"   onclick="
                                                             if (Paging_CountChecked('CheckBoxID', document.myForm.TotalCheckBoxID.value) > 0) {
-                                                                if (confirm('<?php   echo  $langTxt["mg:delpermis"] ?>')) {
+                                                                if (confirm('<?php echo  $langTxt["mg:delpermis"] ?>')) {
                                                                     delContactNew('../core/deletePermis.php');
                                                                 }
                                                             } else {
-                                                                alert('<?php   echo  $langTxt["mg:selpermis"] ?>');
+                                                                alert('<?php echo  $langTxt["mg:selpermis"] ?>');
                                                             }
                                                           "></div>
-                                                    <div   style="display:none;" class="btnSort" title="<?php   echo  $langTxt["btn:sortting"] ?>" onclick="sortContactNew('../core/sortPr.php');"></div>
+                                                    <div   style="display:none;" class="btnSort" title="<?php echo  $langTxt["btn:sortting"] ?>" onclick="sortContactNew('../core/sortPr.php');"></div>
                                                 </td>
                                             </tr>
                                         </table>
@@ -143,28 +140,19 @@ $valNav2 = $langTxt["nav:perManage2"];
                                 <tr ><td width="3%"  class="divRightTitleTbL"  valign="middle" align="center" >
                                         <input name="CheckBoxAll" type="checkbox"  id="CheckBoxAll"  value="Yes" onClick="Paging_CheckAll(this, 'CheckBoxID', document.myForm.TotalCheckBoxID.value)"   class="formCheckboxHead" />    </td>
 
-                                    <td  class="divRightTitleTb"   valign="middle" align="left" ><span class="fontTitlTbRight"><?php   echo  $langTxt["pr:subject"] ?></span></td>
-                                    <td width="12%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight"><?php   echo  $langTxt["mg:status"] ?></span></td>
-                                    <td width="12%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight"><?php   echo  $langTxt["us:credate"] ?></span></td>
-                                    <td width="12%"  class="divRightTitleTbR"  valign="middle"  align="center"><span class="fontTitlTbRight"><?php   echo  $langTxt["mg:manage"] ?></span></td>
+                                    <td  class="divRightTitleTb"   valign="middle" align="left" ><span class="fontTitlTbRight"><?php echo  $langTxt["pr:subject"] ?></span></td>
+                                    <td width="12%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["mg:status"] ?></span></td>
+                                    <td width="12%"  class="divRightTitleTb"  valign="middle"  align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["us:credate"] ?></span></td>
+                                    <td width="12%"  class="divRightTitleTbR"  valign="middle"  align="center"><span class="fontTitlTbRight"><?php echo  $langTxt["mg:manage"] ?></span></td>
                                 </tr>
-                                <?php  
+                                <?php
 // Value SQL SELECT #########################
                                 $sqlSelect = "" . $core_tb_group . "_id," . $core_tb_group . "_name," . $core_tb_group . "_credate," . $core_tb_group . "_status";
                               
 // SQL SELECT #########################
                                 $sql = "SELECT " . $sqlSelect . "  FROM " . $core_tb_group . "  WHERE " . $core_tb_group . "_id>0  ";
-                                //$sql = $sql ." AND  " . $core_tb_group . "_typemini !='1' ";
-                                
-                                if(!empty($_REQUEST['inputGh']) && ($_REQUEST['inputGh'] == "minisite")){
-                                    $sql = $sql ."AND ".$core_tb_group."_typemini = '1'  ";
-                                  } else {
-                                    $sql = $sql ."AND ".$core_tb_group."_typemini != '1'  ";
-                                  }
-  
-                                  
                                 $sql = $sql . $sqlSearch;
-                                
+                                // print_pre($sql);
                                 $query = wewebQueryDB($coreLanguageSQL, $sql);
                                 $count_totalrecord = wewebNumRowsDB($coreLanguageSQL, $query);
 
@@ -223,73 +211,73 @@ $valNav2 = $langTxt["nav:perManage2"];
                                             $valDivTr = "divSubOverTb";
                                         }
                                         ?>
-                                        <tr class="<?php   echo  $valDivTr ?>" >
-                                            <td  class="divRightContantOverTbL"  valign="top" align="center" ><input  id="CheckBoxID<?php   echo  $index ?>" name="CheckBoxID<?php   echo  $index ?>" type="checkbox" class="formCheckboxList" onClick="Paging_CheckAllHandle(document.myForm.CheckBoxAll, 'CheckBoxID', document.myForm.TotalCheckBoxID.value)" value="<?php   echo  $valID ?>" />    </td>
+                                        <tr class="<?php echo  $valDivTr ?>" >
+                                            <td  class="divRightContantOverTbL"  valign="top" align="center" ><input  id="CheckBoxID<?php echo  $index ?>" name="CheckBoxID<?php echo  $index ?>" type="checkbox" class="formCheckboxList" onClick="Paging_CheckAllHandle(document.myForm.CheckBoxAll, 'CheckBoxID', document.myForm.TotalCheckBoxID.value)" value="<?php echo  $valID ?>" />    </td>
                                             <td  class="divRightContantOverTb"   valign="top" align="left" ><a  href="javascript:void(0)"  onclick="
-                                                    document.myFormHome.valEditID.value =<?php   echo  $valID ?>;
-                                                    viewContactNew('../core/viewPermis.php');" ><?php   echo  $valName ?></a></td>
+                                                    document.myFormHome.valEditID.value =<?php echo  $valID ?>;
+                                                    viewContactNew('../core/viewPermis.php');" ><?php echo  $valName ?></a></td>
                                             <td  class="divRightContantOverTb"  valign="top"  align="center">
-                                                <div   id="load_status<?php   echo  $valID ?>">
-        <?php   if ($valStatus == "Enable") { ?>
+                                                <div   id="load_status<?php echo  $valID ?>">
+        <?php if ($valStatus == "Enable") { ?>
 
-                                                        <a href="javascript:void(0)"  onclick="changeStatus('load_waiting<?php   echo  $valID ?>', '<?php   echo  $core_tb_group ?>', '<?php   echo  $valStatus ?>', '<?php   echo  $valID ?>', 'load_status<?php   echo  $valID ?>', '../core/statusMg.php')" ><span class="<?php   echo  $valStatusClass ?>"><?php   echo  $valStatus ?></span></a>
+                                                        <a href="javascript:void(0)"  onclick="changeStatus('load_waiting<?php echo  $valID ?>', '<?php echo  $core_tb_group ?>', '<?php echo  $valStatus ?>', '<?php echo  $valID ?>', 'load_status<?php echo  $valID ?>', '../core/statusMg.php')" ><span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span></a>
 
-        <?php   } else { ?>
+        <?php } else { ?>
 
-                                                        <a href="javascript:void(0)"  onclick="changeStatus('load_waiting<?php   echo  $valID ?>', '<?php   echo  $core_tb_group ?>', '<?php   echo  $valStatus ?>', '<?php   echo  $valID ?>', 'load_status<?php   echo  $valID ?>', '../core/statusMg.php')"> <span class="<?php   echo  $valStatusClass ?>"><?php   echo  $valStatus ?></span> </a>
+                                                        <a href="javascript:void(0)"  onclick="changeStatus('load_waiting<?php echo  $valID ?>', '<?php echo  $core_tb_group ?>', '<?php echo  $valStatus ?>', '<?php echo  $valID ?>', 'load_status<?php echo  $valID ?>', '../core/statusMg.php')"> <span class="<?php echo  $valStatusClass ?>"><?php echo  $valStatus ?></span> </a>
 
-        <?php   } ?>
+        <?php } ?>
 
-                                                    <img src="../img/loader/ajax-loaderstatus.gif" alt="waiting"  style="display:none;"  id="load_waiting<?php   echo  $valID ?>" />     </div>    </td>
+                                                    <img src="../img/loader/ajax-loaderstatus.gif" alt="waiting"  style="display:none;"  id="load_waiting<?php echo  $valID ?>" />     </div>    </td>
                                             <td  class="divRightContantOverTb"  valign="top"  align="center">
-                                                <span class="fontContantTbupdate"><?php   echo  $valDateCredate ?></span><br/>
-                                                <span class="fontContantTbTime"><?php   echo  $valTimeCredate ?></span>    </td>
+                                                <span class="fontContantTbupdate"><?php echo  $valDateCredate ?></span><br/>
+                                                <span class="fontContantTbTime"><?php echo  $valTimeCredate ?></span>    </td>
                                             <td  class="divRightContantOverTbR"  valign="top"  align="center">
                                                 <table  border="0" cellspacing="0" cellpadding="0">
                                                     <tr>
 
                                                         <td valign="top" align="center" width="30">
-                                                            <div class="divRightManage" title="<?php   echo  $langTxt["btn:edit"] ?>" onclick="
-                                                                    document.myFormHome.valEditID.value =<?php   echo  $valID ?>;
+                                                            <div class="divRightManage" title="<?php echo  $langTxt["btn:edit"] ?>" onclick="
+                                                                    document.myFormHome.valEditID.value =<?php echo  $valID ?>;
                                                                     editContactNew('../core/editPermis.php');">
                                                                 <img src="../img/btn/edit.png"  /><br/>
-                                                                <span class="fontContantTbManage"><?php   echo  $langTxt["btn:edit"] ?></span>    </div>    </td>
+                                                                <span class="fontContantTbManage"><?php echo  $langTxt["btn:edit"] ?></span>    </div>    </td>
                                                         <td valign="top" align="center" width="30">
-                                                            <div class="divRightManage" title="<?php   echo  $langTxt["btn:del"] ?>"  onClick="
-                                                                    if (confirm('<?php   echo  $langTxt["mg:delpermis"] ?>')) {
-                                                                        Paging_CheckedThisItem(document.myForm.CheckBoxAll, <?php   echo  $index ?>, 'CheckBoxID', document.myForm.TotalCheckBoxID.value);
+                                                            <div class="divRightManage" title="<?php echo  $langTxt["btn:del"] ?>"  onClick="
+                                                                    if (confirm('<?php echo  $langTxt["mg:delpermis"] ?>')) {
+                                                                        Paging_CheckedThisItem(document.myForm.CheckBoxAll, <?php echo  $index ?>, 'CheckBoxID', document.myForm.TotalCheckBoxID.value);
                                                                         delContactNew('../core/deletePermis.php');
                                                                     }
                                                                  ">
                                                                 <img src="../img/btn/delete.png"  /><br/>
-                                                                <span class="fontContantTbManage"><?php   echo  $langTxt["btn:del"] ?></span>    </div>    </td>
+                                                                <span class="fontContantTbManage"><?php echo  $langTxt["btn:del"] ?></span>    </div>    </td>
                                                     </tr>
                                                 </table>    </td>
                                         </tr>
 
-                                        <?php  
+                                        <?php
                                         $index++;
                                     }
                                 } else {
                                     ?>
                                     <tr >
-                                        <td colspan="5" align="center"  valign="middle"  class="divRightContantTbRL" style="padding-top:150px; padding-bottom:150px;" ><?php   echo  $langTxt["mg:nodate"] ?></td>
+                                        <td colspan="5" align="center"  valign="middle"  class="divRightContantTbRL" style="padding-top:150px; padding-bottom:150px;" ><?php echo  $langTxt["mg:nodate"] ?></td>
                                     </tr>
-<?php   } ?>
+<?php } ?>
 
                                 <tr >
                                     <td colspan="6" align="center"  valign="middle"  class="divRightContantTbRL" ><table width="98%" border="0" cellspacing="0" cellpadding="0"  align="center" >
                                             <tr>
-                                                <td  class="divRightNavTb" align="left"><span class="fontContantTbNavPage"><?php   echo  $langTxt["pr:All"] ?> <b><?php   echo  number_format($count_totalrecord) ?></b> <?php   echo  $langTxt["pr:record"] ?></span></td>
+                                                <td  class="divRightNavTb" align="left"><span class="fontContantTbNavPage"><?php echo  $langTxt["pr:All"] ?> <b><?php echo  number_format($count_totalrecord) ?></b> <?php echo  $langTxt["pr:record"] ?></span></td>
                                                 <td  class="divRightNavTb" align="right">
                                                     <table width="100%" border="0" cellpadding="0" cellspacing="0">
                                                         <tr> 
-                                                            <td align="right" style="padding-right:10px;"><span class="fontContantTbNavPage"><?php   echo  $langTxt["pr:page"] ?>  
-                                                                        <?php   if ($numberofpage > 1) { ?>
+                                                            <td align="right" style="padding-right:10px;"><span class="fontContantTbNavPage"><?php echo  $langTxt["pr:page"] ?>  
+                                                                        <?php if ($numberofpage > 1) { ?>
                                                                         <select name="toolbarPageShow"  class="formSelectContantPage" onChange="document.myForm.module_pageshow.value = this.value;
                                                                                 document.myForm.submit();
                                                                                 ">
-                                                                            <?php  
+                                                                            <?php
                                                                             if ($numberofpage < $module_default_maxpage) {
                                                                                 // Show page list #########################
                                                                                 for ($i = 1; $i <= $numberofpage; $i++) {
@@ -320,21 +308,21 @@ $valNav2 = $langTxt["nav:perManage2"];
                                                                             }
                                                                             ?>
                                                                         </select> 
-                                                            <?php   } else { ?>
-                                                                        <b><?php   echo  $module_pageshow ?></b>
-                                                            <?php   } ?>
-                                                            <?php   echo  $langTxt["pr:of"] ?> <b><?php   echo  $numberofpage ?></b></span></td>
-<?php   if ($module_pageshow > 1) { ?>
+                                                            <?php } else { ?>
+                                                                        <b><?php echo  $module_pageshow ?></b>
+                                                            <?php } ?>
+                                                            <?php echo  $langTxt["pr:of"] ?> <b><?php echo  $numberofpage ?></b></span></td>
+<?php if ($module_pageshow > 1) { ?>
                                                                 <td width="21" align="center"> <img src="../img/controlpage/playset_start.gif" width="21" height="21" 
                                                                                                     onmouseover="this.src = '../img/controlpage/playset_start_active.gif';
                                                                                                             this.style.cursor = 'hand';" 
                                                                                                     onmouseout="this.src = '../img/controlpage/playset_start.gif';" 
                                                                                                     onclick="document.myForm.module_pageshow.value = 1;
                                                                                                             document.myForm.submit();"  style="cursor:pointer;" /></td>
-<?php   } else { ?>
+<?php } else { ?>
                                                                 <td width="21" align="center"><img src="../img/controlpage/playset_start_disable.gif" width="21" height="21" /></td>
-<?php   } ?>
-                                                                                                <?php  
+<?php } ?>
+                                                                                                <?php
                                                                                                 if ($module_pageshow > 1) {
                                                                                                     $valPrePage = $module_pageshow - 1;
                                                                                                     ?>
@@ -342,11 +330,11 @@ $valNav2 = $langTxt["nav:perManage2"];
                                                                                                     onmouseover="this.src = '../img/controlpage/playset_backward_active.gif';
                                                                                                             this.style.cursor = 'hand';" 
                                                                                                     onmouseout="this.src = '../img/controlpage/playset_backward.gif';" 
-                                                                                                    onclick="document.myForm.module_pageshow.value = '<?php   echo  $valPrePage ?>';
+                                                                                                    onclick="document.myForm.module_pageshow.value = '<?php echo  $valPrePage ?>';
                                                                                                             document.myForm.submit();" /></td>
-                                                                <?php   } else { ?>
+                                                                <?php } else { ?>
                                                                 <td width="21" align="center"><img src="../img/controlpage/playset_backward_disable.gif" width="21" height="21" /></td>
-<?php   } ?>
+<?php } ?>
                                                             <td width="21" align="center"> <img src="../img/controlpage/playset_stop.gif" width="21" height="21"   style="cursor:pointer;"
                                                                                                 onmouseover="this.src = '../img/controlpage/playset_stop_active.gif';
                                                                                                         this.style.cursor = 'hand';" 
@@ -359,7 +347,7 @@ $valNav2 = $langTxt["nav:perManage2"];
                                                                                                             document.myForm.submit();
                                                                                                         }
                                                                                                 " /></td>
-                                                            <?php  
+                                                            <?php
                                                             if ($module_pageshow < $numberofpage) {
                                                                 $valNextPage = $module_pageshow + 1;
                                                                 ?>
@@ -367,21 +355,21 @@ $valNav2 = $langTxt["nav:perManage2"];
                                                                                                     onmouseover="this.src = '../img/controlpage/playset_forward_active.gif';
                                                                                                             this.style.cursor = 'hand';" 
                                                                                                     onmouseout="this.src = '../img/controlpage/playset_forward.gif';" 
-                                                                                                    onclick="document.myForm.module_pageshow.value = '<?php   echo  $valNextPage ?>';
+                                                                                                    onclick="document.myForm.module_pageshow.value = '<?php echo  $valNextPage ?>';
                                                                                                             document.myForm.submit();" /></td>
-<?php   } else { ?>
+<?php } else { ?>
                                                                 <td width="10" align="center"><img src="../img/controlpage/playset_forward_disable.gif" width="21" height="21" /></td>
-                    <?php   } ?>
-                    <?php   if ($module_pageshow < $numberofpage) { ?>
+                    <?php } ?>
+                    <?php if ($module_pageshow < $numberofpage) { ?>
                                                                 <td width="10" align="center"><img src="../img/controlpage/playset_end.gif" width="21" height="21"   style="cursor:pointer;"
                                                                                                    onmouseover="this.src = '../img/controlpage/playset_end_active.gif';
                                                                                                            this.style.cursor = 'hand';" 
                                                                                                    onmouseout="this.src = '../img/controlpage/playset_end.gif';" 
-                                                                                                   onclick="document.myForm.module_pageshow.value = '<?php   echo  $numberofpage ?>';
+                                                                                                   onclick="document.myForm.module_pageshow.value = '<?php echo  $numberofpage ?>';
                                                                                                            document.myForm.submit();" /></td>
-<?php   } else { ?>
+<?php } else { ?>
                                                                 <td width="10" align="center"><img src="../img/controlpage/playset_end_disable.gif" width="21" height="21" /></td>
-<?php   } ?>
+<?php } ?>
                                                         </tr>
                                                     </table>
                                                 </td>
@@ -389,12 +377,12 @@ $valNav2 = $langTxt["nav:perManage2"];
                                         </table></td>
                                 </tr>
                             </table>
-                            <input name="TotalCheckBoxID" type="hidden" id="TotalCheckBoxID" value="<?php   echo  $index - 1 ?>" />
+                            <input name="TotalCheckBoxID" type="hidden" id="TotalCheckBoxID" value="<?php echo  $index - 1 ?>" />
                             <div class="divRightContantEnd"></div>
                         </div>
 
                     </form>
-<?php   include("../lib/disconnect.php"); ?>
+<?php include("../lib/disconnect.php"); ?>
 
                 </body>
                 </html>

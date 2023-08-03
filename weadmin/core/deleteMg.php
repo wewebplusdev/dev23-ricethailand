@@ -1,4 +1,4 @@
-<?php  
+<?php
 @include("../lib/session.php");
 include("../lib/config.php");
 include("../lib/connect.php");
@@ -28,11 +28,11 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
 }
 	
 ?>
-	<?php   include("../lib/disconnect.php");?>
+	<?php include("../lib/disconnect.php");?>
 
 <form action="../core/menuManage.php" method="post" name="myFormAction" id="myFormAction">
-    <input name="masterkey" type="hidden" id="masterkey" value="<?php   echo $_REQUEST['masterkey']?>" />
-    <input name="menukeyid" type="hidden" id="menukeyid" value="<?php   echo $_REQUEST['menukeyid']?>" />
-    <input name="inputSearch" type="hidden" id="inputSearch" value="<?php   echo $_REQUEST['inputSearch']?>" />
+    <input name="masterkey" type="hidden" id="masterkey" value="<?php echo $_REQUEST['masterkey']?>" />
+    <input name="menukeyid" type="hidden" id="menukeyid" value="<?php echo $_REQUEST['menukeyid']?>" />
+    <input name="inputSearch" type="hidden" id="inputSearch" value="<?php echo $_REQUEST['inputSearch']?>" />
 </form>            
 <script language="JavaScript" type="text/javascript"> document.myFormAction.submit(); </script>

@@ -1,4 +1,4 @@
-<?php  
+<?php
 include("../lib/session.php");
 include("../lib/config.php");
 include("../lib/connect.php");
@@ -14,12 +14,12 @@ include("../core/incLang.php");
             <meta name="googlebot" content="noindex, nofollow">
 
                 <link href="../css/theme.css" rel="stylesheet"/>
-                <title><?php   echo $core_name_title ?></title>
+                <title><?php echo  $core_name_title ?></title>
                 <link rel="stylesheet" type="text/css" href="../js/jquery-ui-1.9.0.css">
                     <link rel="stylesheet" type="text/css" href="../js/colorbox.css" media="screen" />
 
-                    <script language="JavaScript"  type="text/javascript" src="../js/jquery-3.7.0.min.js"></script>
-                    <script language="JavaScript"  type="text/javascript" src="../js/jquery-ui-1.13.2.js"></script>
+                    <script language="JavaScript"  type="text/javascript" src="../js/jquery-1.9.0.js"></script>
+                    <script language="JavaScript"  type="text/javascript" src="../js/jquery-ui-1.9.0.js"></script>
                     <script language="JavaScript"  type="text/javascript" src="../js/jquery.blockUI.js"></script>
                     <script language="JavaScript"  type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
                     <script language="JavaScript"  type="text/javascript" src="../js/fancybox/jquery.fancybox.js"></script>
@@ -35,24 +35,24 @@ include("../core/incLang.php");
                     <body>
                         <div class="allBackOffice">
                             <!-- #################### Head ###############  -->
-                            <?php   include("../core/incHead.php"); ?>
+                            <?php include("../core/incHead.php"); ?>
                             <!-- #################### Main ###############  -->
                             <div class="mainBackOffice">
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                         <td  class="tbLeftMenu" align="left"  valign="top" >
                                             <div class="mLeftBackOffice">
-                                                <?php  include("../core/incLeft.php"); ?>
+                                                <?php include("../core/incLeft.php"); ?>
                                             </div>
                                         </td>
                                         <td  align="left" class="borderLeft" valign="top">
                                             <form action="?" method="post" name="myFormHome" id="myFormHome">
-                                                <input name="masterkey" type="hidden" id="masterkey" value="1<?php  echo  $masterkey ?>" />
-                                                <input name="menukeyid" type="hidden" id="menukeyid" value="<?php  echo  $menukeyid ?>" />
+                                                <input name="masterkey" type="hidden" id="masterkey" value="1<?php echo  $masterkey ?>" />
+                                                <input name="menukeyid" type="hidden" id="menukeyid" value="<?php echo  $menukeyid ?>" />
                                             </form>
 
                                             <div class="mRightBackOffice" id="boxContantLoad">
-                                                <?php   include("../core/incWaitting.php") ?>
+                                                <?php include("../core/incWaitting.php") ?>
                                             </div>
                                         </td>
                                     </tr>
@@ -60,8 +60,8 @@ include("../core/incLang.php");
                             </div>
                             <div class="clearAll"></div>
                             <!-- #################### Footer ###############  -->
-                            <?php   include("../core/incFooter.php"); ?>
-                            <?php   include("../core/incLoderBox.php"); ?>
+                            <?php include("../core/incFooter.php"); ?>
+                            <?php include("../core/incLoderBox.php"); ?>
                         </div>
 
                     </body>

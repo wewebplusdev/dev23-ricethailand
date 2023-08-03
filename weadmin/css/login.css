@@ -1,0 +1,245 @@
+html,
+body {
+	height: 100%;
+}
+
+body {
+	align-items: center;
+	font-family: 'Prompt', sans-serif;
+	background: #ecde94;
+}
+
+.box-form {
+
+display: table;
+
+width: 100vw;
+}
+	.box-form .text-left {
+	    background: #ca9d27 url(../img/bg-login.jpg) no-repeat center;
+	    background-size: cover;
+		float: left;
+		width: 70%;
+		height: 100vh;
+		color: #ffffff;
+		padding: 5%;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-align: center;
+		align-items: center;
+	    box-shadow: 3px 0px 8px rgba(0, 0, 0, 0.20);
+	}
+
+		.box-form .text-left .b-text-left {
+			width: 100%;
+		}
+			.box-form .text-left h1 {
+			    text-transform: uppercase;
+			    margin: 0px;
+			}
+			.box-form .text-left h3 {
+			    margin-top: 0px;
+			}
+			.box-form .text-left hr {
+				border-color: #dfcc92;
+			}
+			.box-form .text-left p {
+	
+			}
+			.box-form .text-left ol {
+		        padding: 0px;
+			    counter-reset: item;
+			    list-style-type: none;
+			}
+				.box-form .text-left ol li {
+					position: relative;
+				    padding: 2px;
+				    padding-left: 35px;
+			        margin: 15px 0px;
+				}
+					.box-form .text-left ol li::before {
+						content: counters(item, ".") " ";
+						counter-increment: item ;
+					    background: #e9c54e;
+					    width: 25px;
+					    height: 25px;
+					    display: block;
+					    text-align: center;
+					    line-height: 27px;
+					    font-style: normal;
+					    border-radius: 50%;
+					    position: absolute;
+					    left: 0px;
+				        top: 0px;
+					}
+					
+			.box-form .text-left .box-step {
+				display: table;
+			    margin-left: 20px;
+		        margin-top: 25px;
+				text-align: center;
+			}
+				.box-form .text-left .box-step .icon-text {
+				    float: left;
+				    position: relative;
+				    padding: 0px 20px;
+				}
+					.box-form .text-left .box-step .icon-text i {
+					    display: table;
+					    margin: auto;
+				        font-size: 16px;
+			            margin-bottom: 10px;
+					}
+					.box-form .text-left .box-step .icon-text span {
+				        font-size: 11px;
+					    line-height: 14px;
+					    display: block;
+					}
+					.box-form .text-left .box-step .icon-text::after {
+				        content: "";
+					    width: 20px;
+					    height: 48px;
+					    position: absolute;
+					    right: -10px;
+					    top: 0px;
+					    background: url(../img/icon-right-head-w.png) no-repeat center;
+					    background-size: contain;
+					}
+					.box-form .text-left .box-step .icon-text:last-child::after {
+						display: none;
+					}
+		
+	.box-form .form-right {
+	    background: #ca9d27 url(../img/bg-login2.jpg) no-repeat center;
+	    background-size: 100% 100%;
+		float: right;
+		width: 30%;
+		height: 100vh;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-align: center;
+		align-items: center;
+	}		
+		.box-form .form-signin {
+			max-width: 370px;
+			margin: auto;
+			display: table;
+			padding: 15px;
+		}
+			.box-form .icon-logo {
+			    display: table;
+			    margin: auto;
+				margin-bottom: 20px;
+			}
+				.box-form .icon-logo img {
+			        width: 80px;
+				    display: block;
+				    float: left;
+				    padding: 10px;
+				}
+	
+			.box-form .form-signin h2 {
+				margin-bottom: 20px;
+				font-size: 17px;
+			    line-height: 24px;
+		        margin-top: 0px;
+			    color: #636363;
+		        text-align: center;
+			}
+				
+			.box-form .form-signin .form-control {
+				position: relative;
+				box-sizing: border-box;
+				height: auto;
+				padding: 10px;
+				font-size: 16px;
+			}
+			.box-form .form-signin .form-control:focus {
+				z-index: 2;
+				border-color: #407aba;
+			    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(64, 122, 186, 0.6);
+			    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(64, 122, 186, 0.6);
+			}
+			.box-form .input-group {
+				margin: auto;
+			    margin-bottom: 20px;
+			}
+			.box-form .box-button {
+			    display: table;
+			    margin: auto;
+			}
+				.box-form .box-button button.btn {
+				    float: left;
+				    margin: 0px 3px;
+				}
+				
+			.box-form .forgot {
+				text-align: left;
+			    margin-bottom: 30px;
+			}
+				.box-form .forgot a {
+					color: #636363 !important;
+				}
+				
+			.box-form button.btn {
+			    background: #d2ac30 !important;
+			    color: #ffffff !important;
+			    border: 0;
+			    padding: 10px 35px;
+		        transition: opacity .5s;
+	            display: block;
+			    margin: auto;
+			}
+			.box-form button.btn:hover {
+			    opacity: 0.8;
+			}
+			
+/* ---------------------------------------------------**** mobile and Tablet ****--------------------------------------------------- */
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+
+}
+
+/* ---------------------------------------------------**** mobile ****--------------------------------------------------- */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+	.box-form .text-left {
+		display: none;
+	}
+	.box-form .form-right {
+	    float: none;
+	    width: 100%;
+	}
+	/* -------------------**** แนวตั้ง ****-------------------- */
+	@media only screen and (orientation:portrait){
+
+	}
+	/* -------------------**** แนวนอน ****------------------- */
+	@media only screen and (orientation:landscape){
+
+	}
+}
+
+/* ---------------------------------------------------**** Tablet ****--------------------------------------------------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+		
+	/* -------------------**** แนวตั้ง ****-------------------- */
+	@media only screen and (orientation:portrait){
+		.box-form .text-left {
+		    float: none;
+		    width: 100%;
+		    height: 55vh;
+		}
+		
+		.box-form .form-right {
+		    float: none;
+		    width: 100%;
+		    height: 45vh;
+		}
+	}
+	/* -------------------**** แนวนอน ****------------------- */
+	@media only screen and (orientation:landscape){
+		.box-form .text-left {
+		    padding: 3%;
+		}
+	}
+
+}

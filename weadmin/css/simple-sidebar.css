@@ -1,0 +1,217 @@
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+ /* Toggle Styles */
+.navbar-brand {
+    margin: 3px;
+}
+ #wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    margin-top: 60px;
+}
+
+#wrapper.toggled {
+    padding-left: 190px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    top: 60px;
+    left: 190px;
+    width: 0;
+    height: calc(100% - 60px);
+    margin-left: -190px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #636363;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#wrapper.toggled #sidebar-wrapper {
+    width: 190px;
+}
+
+#page-content-wrapper {
+    position: relative;
+    padding: 15px;
+    width: 100%;  
+    overflow-x: hidden;
+    min-width: 100vw;
+}
+.xyz{
+    min-width: 290px;
+    padding: 0px;
+}
+.fixed-brand{
+    width: auto;
+}
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 190px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 2px;
+    padding-right: 2px;
+}
+
+.sidebar-nav li {
+
+}
+.sidebar-nav li.name-user {
+	display: none;
+}
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    padding: 15px 10px 15px 52px;
+    border-radius: 0px;
+}
+.sidebar-nav li.active a {
+	background: #585858 !important;
+}
+
+.sidebar-nav li:not(.name-user) a {
+    color: #ababab;
+}
+.sidebar-nav li.active:not(.name-user) a {
+    color: #64c1ca;
+}
+.sidebar-nav li.name-user a {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    background: rgba(255,255,255,0.2);
+    border-left: red 2px solid;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+.sidebar-nav li a span {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.no-margin{
+    margin:0;
+}
+
+@media only screen and (min-width:768px) {
+    #wrapper {
+        padding-left: 190px;
+    }
+    .fixed-brand{
+        width: 214px;
+    }
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 190px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 250px;
+    }
+    #wrapper.toggled-2 #sidebar-wrapper {
+        width: 50px;
+        overflow: hidden;
+    }
+    #wrapper.toggled-2 #sidebar-wrapper:hover {
+        width: 190px;
+    }
+
+
+    #page-content-wrapper {
+        padding: 20px;
+        min-width: inherit;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        padding-left: 190px;
+    }
+    #wrapper.toggled-2 #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+        margin-left: -140px;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        width: calc(100% + 140px);
+
+    }
+    .nav-stacked>li.logout {
+        position: fixed;
+	    left: 0px;
+	    width: 250px;
+	    height: 52px;
+	    transition: .5s;
+	    bottom: 10px;
+	    overflow: hidden;
+	}
+	#wrapper.toggled-2 li.logout {
+	    width: 50px;
+	}
+	#wrapper.toggled-2 #sidebar-wrapper:hover li.logout {
+	    width: 250px;		
+	}
+	#wrapper li.logout a {
+	    width: 250px;
+	}
+	#menu.sidebar-nav {
+	    padding-bottom: 62px;
+	}
+}
+@media only screen and (max-width:767px) {
+	.sidebar-nav li.name-user {
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 800px) {
+    #page-content-wrapper {
+        min-width: calc(100vw - 50px);
+    }
+}

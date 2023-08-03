@@ -1,5 +1,5 @@
-<?php  
-$check_login_status = 1;
+<?php
+
 @include("../lib/session.php");
 include("../lib/config.php");
 include("../lib/connect.php");
@@ -21,16 +21,16 @@ if ($username != $usernameOld) {
             document.myForm.inputUserName.value = ''
             document.myForm.inputUserName.focus();
         </script>
-    <?php   } else { ?>
+    <?php } else { ?>
         <script language="JavaScript" type="text/javascript">
             jQuery("#inputUserName").removeClass("formInputContantTbAlertY");
         </script>
-    <?php   } ?>
-<?php   } else { ?>
+    <?php } ?>
+<?php } else { ?>
     <script language="JavaScript" type="text/javascript">
         jQuery("#inputUserName").removeClass("formInputContantTbAlertY");
     </script>
-<?php   } ?>
+<?php } ?>
 
 
 

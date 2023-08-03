@@ -1,4 +1,4 @@
-<?php   
+<?php 
 include("../lib/session.php");
 include("../lib/config.php");
 ?>
@@ -9,8 +9,8 @@ include("../lib/config.php");
 <meta name="robots" content="noindex, nofollow">
 <meta name="googlebot" content="noindex, nofollow">
 <link href="../css/theme.css" rel="stylesheet"/>
-<title><?php   echo $core_name_title?></title>
-<script language="JavaScript"  type="text/javascript" src="../js/jquery-3.7.0.min.js"></script>
+<title><?php echo $core_name_title?></title>
+<script language="JavaScript"  type="text/javascript" src="../js/jquery-1.9.0.js"></script>
 <script language="JavaScript"  type="text/javascript" src="../js/jquery.blockUI.js"></script>
 <script language="JavaScript"  type="text/javascript" src="../js/scriptCoreWeweb.js"></script>
 </head>
@@ -24,7 +24,7 @@ include("../lib/config.php");
   <tr>
     <td valign="top">
     
-<?php  
+<?php
 
 function formatImageSize($mySize) {
 	if($mySize>1024*1024) {
@@ -66,7 +66,7 @@ function getFileOrFolderNameUpload($myURL) {
         
         <tr> 
           <td align="center" valign="top"> 
-            <?php  
+            <?php
 $ImagePath = "..";
 if($CurrentPath=="") { $CurrentPath = $ImagePath; }
 $CurrentPath =removeEndSlash($CurrentPath);
@@ -76,19 +76,19 @@ $UpPath = removeEndURL($CurrentPath);
               <tr> 
                 <td height="22" align="center" valign="middle">&nbsp;</td>
                 <td height="22" colspan="2" align="left"><span class="font_style10">
-                  <?php   echo $CurrentPath?>
+                  <?php echo $CurrentPath?>
                   </span></td>
               </tr>
-              <?php  
+              <?php
 if($CurrentPath!=$ImagePath) {
 	$FullPathBaseURL = $FullPath . "/" . substr($CurrentPath,strlen($ImagePath)+1,strlen($CurrentPath));
 ?>
               <tr onMouseOver="this.style.background='#DDDDDD'" onMouseOut="this.style.background=''"> 
                 <td width="18" height="18" align="center" valign="middle"><img src="../img/iconmenu/1283582620_045.png" width="16" height="16"></td>
-                <td width="638" height="18" align="left"> <a href="?CurrentPath=<?php   echo $UpPath . "/" . $file ?>">..</a></td>
+                <td width="638" height="18" align="left"> <a href="?CurrentPath=<?php echo $UpPath . "/" . $file ?>">..</a></td>
                 <td width="41">&nbsp;</td>
               </tr>
-              <?php  
+              <?php
 } else {
 	$FullPathBaseURL = $FullPath;
 }
@@ -117,17 +117,17 @@ while (false !== ($file = readdir($handle))) {
 			?>
               <tr onMouseOver="this.style.background='#DDDDDD'" onMouseOut="this.style.background=''"> 
                 <td width="18" height="18" align="center" valign="middle"> 
-                  <?php   if($FileInside==0) { ?>
+                  <?php if($FileInside==0) { ?>
                   <img src="../img/iconmenu/1283582638_046.png" width="16" height="16"> 
-                  <?php   } else { ?>
+                  <?php } else { ?>
                   <img src="../img/iconmenu/1283582638_046.png" width="16" height="16"> 
-                  <?php   } ?>                </td>
-                <td height="18" align="left"> <a href="?CurrentPath=<?php   echo $CurrentPath . "/" . $file ?>"> 
-                  <?php   echo $file?>
+                  <?php } ?>                </td>
+                <td height="18" align="left"> <a href="?CurrentPath=<?php echo $CurrentPath . "/" . $file ?>"> 
+                  <?php echo $file?>
                   </a></td>
                 <td width="41">&nbsp;</td>
               </tr>
-              <?php  
+              <?php
 		}
     } 
 }
@@ -141,13 +141,13 @@ while (false !== ($file = readdir($handle))) {
 				?>
               <tr onMouseOver="this.style.background='#DDDDDD'" onMouseOut="this.style.background=''"> 
                 <td width="18" height="18" align="center" valign="middle"> <img src="../img/iconmenu/1283582674_169.png" width="16" height="16">                </td>
-                <td height="18" align="left"> <a href="#" onClick="setPath('<?php   echo $file?>')">
-                  <?php   echo $file?>
+                <td height="18" align="left"> <a href="#" onClick="setPath('<?php echo $file?>')">
+                  <?php echo $file?>
                   </a></td>
                 <td width="41"> 
-                  <?php   echo formatImageSize(filesize($CurrentPath . "/". $file))?>                </td>
+                  <?php echo formatImageSize(filesize($CurrentPath . "/". $file))?>                </td>
               </tr>
-              <?php  
+              <?php
 		}
     } 
 }
@@ -158,7 +158,7 @@ closedir($handle);
       </table>
       <script language="JavaScript" type="text/JavaScript">
 function setPath(myFile) {
-	window.opener.document.myForm.inputlinkpath.value = '<?php   echo $CurrentPath?>'+'/'+myFile;
+	window.opener.document.myForm.inputlinkpath.value = '<?php echo $CurrentPath?>'+'/'+myFile;
 	window.close();
 }
 	  </script>    </td>

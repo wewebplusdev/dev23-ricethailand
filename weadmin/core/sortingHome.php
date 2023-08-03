@@ -1,4 +1,4 @@
-<?php  	
+<?php	
 include("../lib/session.php");
 include("../lib/config.php");
 include("../lib/connect.php");
@@ -15,7 +15,7 @@ $valSortCount= count($valSortArray);
 			$query=wewebQueryDB($coreLanguageSQL,$sql);
 			
 			/*
-			$insert=array();
+			$insert = array();
 			$insert[$core_tb_sort."_order"] = "'".$valOrder."'";
 			$insert[$core_tb_sort."_menuID"] = "'".$valSort."'";
 			$insert[$core_tb_sort."_memberID"] = "'".$_SESSION[$valSiteManage.'core_session_id']."'";
